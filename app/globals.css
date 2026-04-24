@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #111f3c;
+  --color-accent: #d0433b;
+  --color-background: #ffffff;
+  --color-foreground: #111f3c;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/90 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  .math-pattern {
+    background-image: radial-gradient(var(--color-primary) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.03;
+  }
+}
