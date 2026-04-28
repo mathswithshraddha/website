@@ -1,6 +1,6 @@
 export default function GallerySection() {
   // Generate the array of 30 image paths based on the file naming convention
-  const images = Array.from({ length: 30 }, (_, i) => 
+  const images = Array.from({ length: 30 }, (_, i) =>
     `/Maths with Shraddha Students Gallery ${i + 1}. .jpg`
   );
 
@@ -12,16 +12,16 @@ export default function GallerySection() {
             Student Success Gallery
           </h2>
           <p className="text-gray-600 text-lg">
-            Glimpses of our students engaging with mathematics, building confidence, and achieving excellence.
+            Glimpses of our students in the post success celebration.
           </p>
         </div>
 
         <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
           {images.map((src, index) => (
             <div key={index} className="break-inside-avoid relative overflow-hidden rounded-xl shadow-sm hover:shadow-lg transition-shadow group border border-gray-100 bg-gray-50">
-              <img 
-                src={encodeURI(src)} 
-                alt={`Maths with Shraddha Student ${index + 1}`} 
+              <img
+                src={encodeURI(src)}
+                alt={`Maths with Shraddha Student ${index + 1}`}
                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />

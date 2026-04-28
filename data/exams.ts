@@ -201,7 +201,7 @@ export const batchTimeline = [
 ];
 
 export const statsData = [
-  { value: "2000+", label: "Students Taught", icon: "Users" },
+  { value: "1000+", label: "Students Taught", icon: "Users" },
   { value: "80%+", label: "Olympiad Success Rate", icon: "Award" },
   { value: "50+", label: "Schools Represented", icon: "Building" },
   { value: "100%", label: "Concept Clarity", icon: "CheckCircle" }

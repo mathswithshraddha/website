@@ -5,9 +5,9 @@ import { generateAdminEmail } from "@/lib/emails/adminNotification";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Admin email address — change this to Shraddha's actual email
+// Admin email address  change this to Shraddha's actual email
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "shraddha@mathswithshraddha.com";
-// The "from" address — must be a verified domain in Resend
+// The "from" address  must be a verified domain in Resend
 const FROM_EMAIL = process.env.FROM_EMAIL || "noreply@mathswithshraddha.com";
 const FROM_NAME = "Maths with Shraddha";
 

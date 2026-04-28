@@ -55,7 +55,7 @@ export default function ExamsFooter() {
                 <Clock className="w-5 h-5 text-accent" />
                 <span>Mon-Sat: 9:00 AM - 6:00 PM</span>
               </li>
-              <li><a href="#free-trial" className="text-gray-300 hover:text-white transition-colors">Book Free Trial</a></li>
+              <li><Link href="/enquire" className="text-gray-300 hover:text-white transition-colors">Book Free Trial</Link></li>
               <li><a href="https://wa.me/919819123456" className="text-gray-300 hover:text-white transition-colors">Chat on WhatsApp</a></li>
             </ul>
           </div>

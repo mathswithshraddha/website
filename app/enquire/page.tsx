@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Enquire About Mathematics Classes | Maths with Shraddha",
-  description: "Get personalized guidance and find the right mathematics program for your child. 2000+ students taught, 80%+ Olympiad success rate.",
+  description: "Get personalized guidance and find the right mathematics program for your child. Shraddha Ma'am has been teaching mathematics since 1991 and holds B.Com., B.Ed. and CIDTT qualifications.",
 };
 
 export default function EnquirePage() {
@@ -18,7 +18,7 @@ export default function EnquirePage() {
         <div className="max-w-4xl mx-auto">
           <header className="text-center mb-16">
             <div className="inline-block px-4 py-1.5 mb-6 bg-accent/10 border border-accent/20 rounded-full">
-              <span className="text-accent text-sm font-bold tracking-wider uppercase">Admission Enquiry 2024-25</span>
+              <span className="text-accent text-sm font-bold tracking-wider uppercase">Admissions Open</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-primary mb-6 tracking-tight">
@@ -28,12 +28,15 @@ export default function EnquirePage() {
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Complete the steps below to help us understand your child's needs. Shraddha will provide personalized guidance for the perfect learning path.
             </p>
+            <p className="mt-4 text-sm md:text-base text-gray-500 max-w-3xl mx-auto leading-relaxed">
+              Shraddha Ma&apos;am is qualified with B.Com., B.Ed. and CIDTT (Cambridge International Diploma for Teachers and Trainers).
+            </p>
             
             <div className="flex flex-wrap justify-center gap-6 mt-12">
               {[
-                { label: "2000+ Students Taught", icon: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
+                { label: "1000+ Students Taught", icon: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
                 { label: "80%+ Olympiad Success", icon: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" },
-                { label: "Certified Educator", icon: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" }
+                { label: "B.Com., B.Ed. & CIDTT", icon: "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" }
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm border border-gray-100">
                   <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -55,7 +58,7 @@ export default function EnquirePage() {
                   We're here to help you make the best decision for your child's education. Chat with us for a quick consultation or to know more about our batch timings.
                 </p>
                 <a 
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919969174811"
                   className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebd5c] text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

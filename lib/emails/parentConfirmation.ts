@@ -75,7 +75,7 @@ export function generateParentEmail(data: ParentEmailData): string {
             <td style="padding:40px;">
               <p style="margin:0 0 8px;font-size:22px;font-weight:800;color:#111f3c;">Hello, ${data.parentName}!</p>
               <p style="margin:0 0 28px;font-size:15px;color:#64748b;line-height:1.6;">
-                Thank you for reaching out. We've received your enquiry and Shraddha will review the details and contact you personally within <strong style="color:#111f3c;">24 hours</strong> to schedule a free consultation.
+                Thank you for reaching out. We've received your enquiry and Shraddha Ma'am, who has been teaching mathematics since 1991, will review the details and contact you personally within <strong style="color:#111f3c;">24 hours</strong> to schedule a free consultation.
               </p>
 
               <!-- Summary Card -->
@@ -136,7 +136,7 @@ export function generateParentEmail(data: ParentEmailData): string {
                         </td>
                         <td style="padding:5px 0;vertical-align:top;">
                           <strong style="font-size:13px;color:#78350f;">${step}</strong>
-                          <span style="font-size:13px;color:#92400e;"> — ${desc}</span>
+                          <span style="font-size:13px;color:#92400e;">  ${desc}</span>
                         </td>
                       </tr>`
       )
@@ -150,7 +150,7 @@ export function generateParentEmail(data: ParentEmailData): string {
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td align="center">
-                    <a href="https://wa.me/919876543210?text=${encodeURIComponent(`Hi Shraddha! I'm ${data.parentName}, parent of ${data.studentName} (${data.grade}). I just submitted an enquiry for ${courseLabel}. Looking forward to connecting!`)}"
+                    <a href="https://wa.me/919969174811?text=${encodeURIComponent(`Hi Shraddha! I'm ${data.parentName}, parent of ${data.studentName} (${data.grade}). I just submitted an enquiry for ${courseLabel}. Looking forward to connecting!`)}"
                        style="display:inline-block;background:#25D366;color:#ffffff;font-size:15px;font-weight:700;text-decoration:none;padding:14px 32px;border-radius:50px;margin-bottom:12px;">
                       Chat with Shraddha Mam on WhatsApp
                     </a>

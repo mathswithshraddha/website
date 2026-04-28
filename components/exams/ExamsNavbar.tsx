@@ -39,14 +39,9 @@ export default function ExamsNavbar() {
               Mental Maths
             </Link>
             
-            <a href="https://wa.me/919819123456" className="flex items-center space-x-2 text-primary hover:text-accent transition-colors font-medium">
-              <MessageCircle className="w-5 h-5" />
-              <span>WhatsApp</span>
-            </a>
-            
-            <a href="#free-trial" className="bg-accent text-white px-6 py-2.5 rounded-full font-semibold hover:bg-accent/90 transition-all shadow-md hover:shadow-lg">
+            <Link href="/enquire" className="bg-accent text-white px-6 py-2.5 rounded-full font-semibold hover:bg-accent/90 transition-all shadow-md hover:shadow-lg">
               Book Free Trial
-            </a>
+            </Link>
           </div>
           
           <div className="md:hidden flex items-center">

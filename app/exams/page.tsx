@@ -3,6 +3,7 @@ import { MessageCircle, Trophy, Award, Building, CheckCircle, BookOpen, Users, T
 import Link from "next/link";
 import { examsData, whyOlympiads, ourApproach, batchTimeline, statsData, examCards } from "@/data/exams";
 import CTASection from "@/components/exams/CTASection";
+import UrgencyBadge from "@/components/UrgencyBadge";
 
 export const metadata: Metadata = {
   title: "Maths Olympiad Coaching | Grades 2-9 Preparation in Mumbai & India",
@@ -37,6 +38,7 @@ export default function ExamsPage() {
             <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-6">
               Expert Olympiad Coaching in Mumbai & Online
             </div>
+            <UrgencyBadge tone="dark" className="mb-6" />
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 leading-tight">
               Mathematics Olympiad & Competitive <span className="text-accent">Exam Preparation</span><br className="hidden md:block" />
               <span className="text-lg md:text-xl font-normal text-gray-300">(Grades 2-9)</span>
@@ -46,14 +48,15 @@ export default function ExamsPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
-              <a href="#free-trial" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl">
-                Book Free Trial
-              </a>
-              <a href="https://wa.me/919819123456" className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all flex items-center justify-center">
+              <Link href="/enquire" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl">
+                Book Free Trial for June Batch
+              </Link>
+              <a href="https://wa.me/919969174811" className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all flex items-center justify-center">
                 <MessageCircle className="w-5 h-5 mr-2" />
-                Chat on WhatsApp
+                Reserve Your Seat for June
               </a>
             </div>
+            <p className="-mt-10 mb-16 text-sm text-gray-300">Only a few seats per batch</p>
           </div>
         </div>
       </section>

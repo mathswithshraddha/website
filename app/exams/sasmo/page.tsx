@@ -4,6 +4,7 @@ import Link from "next/link";
 import { examsData } from "@/data/exams";
 import CTASection from "@/components/exams/CTASection";
 import FAQSection from "@/components/exams/FAQSection";
+import UrgencyBadge from "@/components/UrgencyBadge";
 
 export const metadata: Metadata = {
   title: "SASMO Exam Preparation | Singapore Maths Olympiad Coaching in Mumbai & Online",
@@ -63,16 +64,18 @@ export default function SASMOPage() {
             <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light">
               {exam.fullDescription}
             </p>
+            <UrgencyBadge tone="dark" className="mb-6" />
             
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
-              <Link href="#free-trial" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl">
-                Book Free Trial
+              <Link href="/enquire" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl text-center">
+                Book Free Trial for June Batch
               </Link>
-              <a href="https://wa.me/919819123456" className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all flex items-center justify-center">
+              <a href="https://wa.me/919969174811" className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all flex items-center justify-center">
                 <MessageCircle className="w-5 h-5 mr-2" />
-                Chat on WhatsApp
+                Reserve Your Seat for June
               </a>
             </div>
+            <p className="-mt-10 mb-16 text-sm text-gray-300">Only a few seats per batch</p>
           </div>
         </div>
       </section>

@@ -22,7 +22,9 @@ export default function FloatingWhatsApp() {
   return (
     <div className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
       <a 
-        href="#contact" 
+        href="https://wa.me/919969174811?text=Hi%20Shraddha%20Ma'am%2C%20I'm%20interested%20in%20a%20free%20trial."
+        target="_blank"
+        rel="noopener noreferrer"
         className="bg-[#25D366] hover:bg-[#1ebd5c] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110"
         aria-label="Chat on WhatsApp"
       >

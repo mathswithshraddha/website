@@ -1,16 +1,11 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import ProblemSection from "@/components/ProblemSection";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import AboutSection from "@/components/AboutSection";
+import SchoolsSection from "@/components/SchoolsSection";
+import MethodologySection from "@/components/MethodologySection";
 import ResultsSection from "@/components/ResultsSection";
-import CoursesSection from "@/components/CoursesSection";
-import TeachingApproach from "@/components/TeachingApproach";
-import LearningModes from "@/components/LearningModes";
-import FreeTrialCTA from "@/components/FreeTrialCTA";
-import AdmissionProcess from "@/components/AdmissionProcess";
 import Testimonials from "@/components/Testimonials";
-import GallerySection from "@/components/GallerySection";
+import CoreStory from "@/components/CoreStory";
+import FAQSection from "@/components/FAQSection";
 import FinalCTA from "@/components/FinalCTA";
 
 export default function Home() {
@@ -18,17 +13,12 @@ export default function Home() {
     <main className="flex min-h-screen flex-col">
       <Navbar />
       <HeroSection />
-      <ProblemSection />
-      <WhyChooseUs />
-      <AboutSection />
+      <SchoolsSection />
+      <MethodologySection />
       <ResultsSection />
-      <CoursesSection />
-      <TeachingApproach />
-      <LearningModes />
-      <FreeTrialCTA />
-      <AdmissionProcess />
       <Testimonials />
-      <GallerySection />
+      <CoreStory isShort={true} />
+      <FAQSection />
       <FinalCTA />
     </main>
   );

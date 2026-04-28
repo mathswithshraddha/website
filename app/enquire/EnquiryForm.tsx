@@ -173,7 +173,7 @@ export default function EnquiryForm() {
     }
   };
 
-  const whatsappLink = `https://wa.me/919876543210?text=${encodeURIComponent(
+  const whatsappLink = `https://wa.me/919969174811?text=${encodeURIComponent(
     `Hi, I'm ${formData.parentName}. I'm interested in ${formData.courseType} classes for my child ${formData.studentName} (${formData.grade}).`
   )}`;
 

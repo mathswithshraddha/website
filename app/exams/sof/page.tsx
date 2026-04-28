@@ -4,10 +4,11 @@ import Link from "next/link";
 import { examsData } from "@/data/exams";
 import CTASection from "@/components/exams/CTASection";
 import FAQSection from "@/components/exams/FAQSection";
+import UrgencyBadge from "@/components/UrgencyBadge";
 
 export const metadata: Metadata = {
   title: "SOF Olympiad Preparation | IMO & NSO Coaching in Mumbai & India",
-  description: "Expert SOF olympiad coaching for IMO, NSO, IEO. Complete preparation with mock tests and personalized attention in Mumbai. Book free trial today.",
+  description: "Expert SOF olympiad coaching for IMO. Complete preparation with mock tests and personalized attention in Mumbai. Book free trial today.",
   keywords: "SOF olympiad preparation, IMO exam coaching, SOF maths syllabus, olympiad foundation classes, IMO preparation Mumbai, online SOF coaching India",
 };
 
@@ -45,7 +46,7 @@ export default function SOFPage() {
           <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.5"/>
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.5" />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
@@ -58,21 +59,23 @@ export default function SOFPage() {
               India's Largest School-Level Olympiad Program
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 leading-tight">
-              SOF Olympiad Preparation <span className="text-accent">(IMO, NSO, IEO)</span>
+              SOF Olympiad Preparation <span className="text-accent">(IMO)</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light">
               {exam.fullDescription}
             </p>
-            
+            <UrgencyBadge tone="dark" className="mb-6" />
+
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
-              <Link href="#free-trial" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl">
-                Book Free Trial
+              <Link href="/enquire" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl text-center">
+                Book Free Trial for June Batch
               </Link>
-              <a href="https://wa.me/919819123456" className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all flex items-center justify-center">
+              <a href="https://wa.me/919969174811" className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all flex items-center justify-center">
                 <MessageCircle className="w-5 h-5 mr-2" />
-                Chat on WhatsApp
+                Reserve Your Seat for June
               </a>
             </div>
+            <p className="-mt-10 mb-16 text-sm text-gray-300">Only a few seats per batch</p>
           </div>
         </div>
       </section>
@@ -170,8 +173,8 @@ export default function SOFPage() {
                 <span className="text-gray-600">Expert</span>
               </div>
               <div className="relative h-4 bg-gray-200 rounded-full mb-4">
-                <div 
-                  className="absolute left-0 top-0 h-full bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 rounded-full" 
+                <div
+                  className="absolute left-0 top-0 h-full bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 rounded-full"
                   style={{ width: `${exam.difficulty * 10}%` }}
                 />
               </div>
@@ -322,7 +325,7 @@ export default function SOFPage() {
       <FAQSection faqs={faqs} />
 
       {/* CTA Section */}
-      <CTASection 
+      <CTASection
         headline="Start Your SOF Olympiad Preparation Today"
         subheadline="Join thousands of students who have achieved recognition in SOF through our expert guidance."
       />
