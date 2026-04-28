@@ -35,7 +35,7 @@ export default function ResultsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-primary text-3xl md:text-4xl font-heading font-bold mb-6">
-            Real Students. Real Results.
+            Exceptional Students. Tangible Results.
           </h2>
           <p className="text-gray-600 text-lg">
             Our systematic approach consistently transforms average performers into top scorers and Olympiad champions.
