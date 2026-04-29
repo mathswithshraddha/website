@@ -9,11 +9,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="inline-block mb-6">
-              <Image 
-                src="/MWS_NOBG.png" 
-                alt="Maths with Shraddha" 
-                width={180} 
-                height={60} 
+              <Image
+                src="/MWS_NOBG.png"
+                alt="Maths with Shraddha"
+                width={180}
+                height={60}
                 className="object-contain h-20 w-auto"
               />
             </Link>
@@ -37,8 +37,8 @@ export default function Footer() {
             <h4 className="text-lg font-bold text-primary mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li><Link href="/about" className="text-gray-600 hover:text-accent transition-colors">Our Story</Link></li>
-              <li><Link href="/#courses" className="text-gray-600 hover:text-accent transition-colors">Our Programs</Link></li>
-              <li><Link href="/#testimonials" className="text-gray-600 hover:text-accent transition-colors">Testimonials</Link></li>
+              <li><Link href="/courses" className="text-gray-600 hover:text-accent transition-colors">Our Programs</Link></li>
+              <li><Link href="/testimonials" className="text-gray-600 hover:text-accent transition-colors">Testimonials</Link></li>
               <li><Link href="/enquire" className="text-gray-600 hover:text-accent transition-colors">Book Free Trial</Link></li>
             </ul>
           </div>

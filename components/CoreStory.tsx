@@ -1,4 +1,3 @@
-import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,7 +14,7 @@ export default function CoreStory({ isShort = false }: CoreStoryProps) {
             <div className="relative">
               <div className="absolute -inset-4 bg-accent/10 rounded-[2.5rem] transform -rotate-3"></div>
               <div className="relative bg-white rounded-3xl p-2 shadow-xl">
-                <div className="rounded-2xl bg-white overflow-hidden relative aspect-[4/5] w-full">
+                <div className="rounded-2xl bg-white overflow-hidden relative aspect-[4/3] w-full">
                   <Image
                     src="/Shraddha Mam.jpg"
                     alt="Shraddha Panchal, Founder of Maths with Shraddha"
@@ -46,22 +45,6 @@ export default function CoreStory({ isShort = false }: CoreStoryProps) {
                 When a child finally understands "why" a formula works, the fear of math disappears completely. My goal is not just to improve grades, but to build independent logical thinkers who approach any problem with confidence.
               </p>
             )}
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-              {[
-                "Focus on 'Why' before 'How'",
-                "Teaching students since 1991",
-                "B.Com., B.Ed. and CIDTT qualified",
-                "Small batches (max 12)",
-                "No rote memorization",
-                "Building logical thinkers",
-              ].map((point, i) => (
-                <div key={i} className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl border border-gray-100 shadow-sm">
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-gray-800 font-medium">{point}</span>
-                </div>
-              ))}
-            </div>
 
             {isShort && (
               <Link href="/about" className="inline-flex items-center text-accent font-bold hover:text-primary transition-colors text-lg">
