@@ -108,7 +108,7 @@ export const examsData: Exam[] = [
     ],
     heroTitle: "IPM Maths Preparation & Coaching",
     heroSubheadline: "Master arithmetic and mental math with speed training and precision exercises.",
-    logo: "/exams-logos/IPM.avif"
+    logo: "/exams-logos/IPM.png"
   },
   {
     slug: "mental-maths",

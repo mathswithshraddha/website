@@ -112,7 +112,7 @@ export default function ExamsPage() {
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-4">
                     <div className="relative w-12 h-12 flex-shrink-0">
-                      <Image src={exam.logo} alt={exam.name} fill className="object-contain" />
+                      <Image src={exam.logo} alt={exam.name} fill sizes="48px" className="object-contain" />
                     </div>
                     <h3 className="text-2xl font-heading font-bold text-primary group-hover:text-accent transition-colors">
                       {exam.name}

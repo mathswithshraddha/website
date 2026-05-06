@@ -3,7 +3,7 @@ import { Globe, Clock, MonitorPlay, Users } from "lucide-react";
 
 export const metadata = {
   title: "International Batches | Maths with Shraddha",
-  description: "Specialized online math coaching batches tailored for the timezones of students in the USA and Belgium.",
+  description: "Specialized online math coaching batches tailored for the timezones of students worldwide.",
 };
 
 export default function InternationalStudents() {
@@ -30,10 +30,10 @@ export default function InternationalStudents() {
               <Globe className="w-5 h-5 mr-2" /> Global Batches Now Open
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight mb-8 leading-tight max-w-4xl mx-auto">
-              Premium Online Math Coaching for Students in <span className="text-accent">USA & Belgium</span>
+              Premium Online Math Coaching for Students <span className="text-accent">Worldwide</span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-medium">
-              We conduct dedicated, live online batches tailored to your timezone. Experience high-quality, concept-driven mathematics learning from the comfort of your home.
+              We conduct dedicated, live online batches tailored to your timezone. Experience high-quality, concept-driven mathematics learning from the comfort of your home, anywhere in the world.
             </p>
             <a href="https://wa.me/919969174811?text=Hi%20Shraddha%20Ma'am%2C%20I'm%20reaching%20out%20from%20overseas%20and%20am%20interested%20in%20a%20free%20trial." target="_blank" rel="noopener noreferrer" className="inline-block bg-accent text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all">
               Enquire for International Batches
@@ -52,7 +52,7 @@ export default function InternationalStudents() {
               </div>
               <h3 className="text-2xl font-bold text-primary mb-4 font-heading">Timezone Aligned</h3>
               <p className="text-gray-700 font-medium leading-relaxed">
-                Our classes are scheduled specifically to match the convenient after-school hours for students living in the United States and Belgium. No more waking up at odd hours.
+                Our classes are scheduled specifically to match the convenient after-school hours for students across different global timezones. No more waking up at odd hours.
               </p>
             </div>
             

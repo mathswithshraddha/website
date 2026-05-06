@@ -12,9 +12,11 @@ export default function Navbar() {
   const navLinks = [
     { name: "Exams", href: "/exams" },
     { name: "About", href: "/about" },
-    { name: "International", href: "/international" },
     { name: "Courses", href: "/courses" },
+    { name: "Team", href: "/team" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Testimonials", href: "/testimonials" },
+    { name: "International", href: "/international" },
   ];
 
   return (
@@ -38,7 +40,8 @@ export default function Navbar() {
                   alt="Maths with Shraddha"
                   width={260}
                   height={90}
-                  className="object-contain h-14 sm:h-16 md:h-20 w-auto drop-shadow-sm"
+                  className="object-contain h-14 sm:h-16 md:h-20"
+                  style={{ width: 'auto' }}
                   priority
                 />
               </Link>

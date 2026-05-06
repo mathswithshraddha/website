@@ -89,7 +89,7 @@ export default function IPMPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 bg-white rounded-2xl shadow-sm p-4">
-                <Image src={exam.logo} alt={exam.name} fill className="object-contain p-4" />
+                <Image src={exam.logo} alt={exam.name} fill sizes="(max-width: 768px) 50vw, 160px" className="object-contain p-4" />
               </div>
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">What is {exam.name}?</h2>

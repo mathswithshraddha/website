@@ -9,6 +9,7 @@ const fredoka = Fredoka({ subsets: ["latin"], variable: "--font-fredoka" });
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mathswithshraddha.vercel.app"),
   title: "Maths with Shraddha | Premium Mathematics & Olympiad Coaching",
   description: "Shraddha Ma'am has been teaching mathematics since 1991 and holds B.Com., B.Ed. and CIDTT qualifications, helping students from Grades 1–10 master concepts and excel in Olympiads.",
   openGraph: {
@@ -41,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <body className={`${fredoka.variable} ${fraunces.variable} font-sans min-h-screen flex flex-col bg-background text-primary`}>
         <Preloader />
         {children}

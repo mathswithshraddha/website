@@ -66,7 +66,6 @@ export default function Home() {
               <span className="text-orange relative inline-block">
                 Shraddha
                 <svg className="absolute w-full h-3 md:h-4 -bottom-1 md:-bottom-2 left-0 text-yellow-400/50" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" strokeLinecap="round" />
                 </svg>
               </span>
             </h1>
@@ -115,7 +114,7 @@ export default function Home() {
         </div>
         <div className="flex-1 flex justify-center items-center w-full">
           <div className="relative w-full max-w-[500px] md:max-w-[600px] aspect-square">
-            <Image src="/IMAGE2.png" alt="Shraddha Mam" fill className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+            <Image src="/IMAGE2.png" alt="Shraddha Mam" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
           </div>
         </div>
       </section>
@@ -127,16 +126,16 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 w-full max-w-7xl px-4">
           {[
-            { title: "Mental Maths", desc: "Build lightning-fast calculation skills and mental agility.", img: "/exams-logos/MmcGmseLogo.jpeg", link: "/exams/mental-maths" },
-            { title: "SOF Maths Olympiad", desc: "Prepare for the Science Olympiad Foundation challenges.", img: "/exams-logos/SOF_IMO.jpeg", link: "/exams/sof" },
-            { title: "IPM", desc: "Intensive training for the Institute for Promotion of Mathematics.", img: "/exams-logos/IPM.avif", link: "/exams/ipm" },
-            { title: "SASMO", desc: "Singapore and Asian Schools Math Olympiad preparation.", img: "/exams-logos/SASMO.png", link: "/exams/sasmo" },
+            { title: "Mental Maths", desc: "Build lightning-fast calculation skills and mental agility.", img: "/exams-logos/MmcGmseLogo.jpeg", link: "/exams/mental-maths", imgBg: "bg-transparent" },
+            { title: "SOF Maths Olympiad", desc: "Prepare for the Science Olympiad Foundation challenges.", img: "/exams-logos/SOF_IMO.jpeg", link: "/exams/sof", imgBg: "bg-transparent" },
+            { title: "IPM", desc: "Intensive training for the Institute for Promotion of Mathematics.", img: "/exams-logos/IPM.png", link: "/exams/ipm", imgBg: "bg-[#0c4a6e] rounded-xl p-2" },
+            { title: "SASMO", desc: "Singapore and Asian Schools Math Olympiad preparation.", img: "/exams-logos/SASMO.png", link: "/exams/sasmo", imgBg: "bg-transparent" },
           ].map((exam, i) => (
             <div key={i} className="bg-white rounded-3xl p-6 w-full flex flex-col items-center text-center shadow-xl transform hover:-translate-y-2 transition-transform">
               <h3 className="text-2xl font-bold font-heading mb-4 text-primary">{exam.title}</h3>
               <p className="text-base text-gray-600 mb-6 flex-grow">{exam.desc}</p>
-              <div className="relative w-full h-32 mb-6">
-                <Image src={exam.img} alt={exam.title} fill className="object-contain" />
+              <div className={`relative w-full h-32 mb-6 ${exam.imgBg}`}>
+                <Image src={exam.img} alt={exam.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw" className="object-contain" />
               </div>
               <Link href={exam.link} className="bg-primary text-white px-6 py-2 rounded-full font-bold hover:bg-accent transition-colors flex items-center gap-2">
                 Read More <ArrowRight className="w-4 h-4" />
@@ -180,9 +179,13 @@ export default function Home() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-10 md:mb-12">
-          {["Mental Maths", "SOF Maths Olympiad", "IPM Olympiad"].map((prog, i) => (
-            <div key={i} className="bg-white text-primary px-6 sm:px-10 py-3 sm:py-5 rounded-full text-base sm:text-xl md:text-2xl font-bold shadow-lg">
-              {prog}
+          {[
+            { text: "Mental Maths", bg: "bg-white", textClass: "text-primary" },
+            { text: "SOF Maths Olympiad", bg: "bg-white", textClass: "text-primary" },
+            { text: "IPM Olympiad", bg: "bg-[#0c4a6e]", textClass: "text-white" }
+          ].map((prog, i) => (
+            <div key={i} className={`${prog.bg} ${prog.textClass} px-6 sm:px-10 py-3 sm:py-5 rounded-full text-base sm:text-xl md:text-2xl font-bold shadow-lg`}>
+              {prog.text}
             </div>
           ))}
         </div>
@@ -209,8 +212,6 @@ export default function Home() {
 
       {/* Shorts Carousel */}
       <ShortsCarousel />
-
-
 
       {/* Testimonials */}
       <Testimonials />
