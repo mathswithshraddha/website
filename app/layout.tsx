@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Maths with Shraddha",
     images: [
       {
-        url: "/MWS_NOBG.png", // Fallback to logo
+        url: "/MWS_NOBG2.png", // Fallback to logo
         width: 800,
         height: 600,
         alt: "Maths with Shraddha",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Maths with Shraddha",
     description: "Teaching mathematics since 1991 with B.Com., B.Ed. and CIDTT qualifications.",
-    images: ["/MWS_NOBG.png"],
+    images: ["/MWS_NOBG2.png"],
   },
 };
 

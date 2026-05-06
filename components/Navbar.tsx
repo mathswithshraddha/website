@@ -36,10 +36,10 @@ export default function Navbar() {
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center">
                 <Image
-                  src="/MWS_NOBG.png"
+                  src="/MWS_NOBG_NAV.png"
                   alt="Maths with Shraddha"
-                  width={260}
-                  height={90}
+                  width={347}
+                  height={322}
                   className="object-contain h-14 sm:h-16 md:h-20"
                   style={{ width: 'auto' }}
                   priority

@@ -12,7 +12,7 @@ export default function TeamsSection() {
     {
       name: "Expert Support Team",
       role: "Academic Mentors",
-      image: "/MWS_NOBG.png", // Fallback to logo or generic avatar
+      image: "/MWS_NOBG2.png", // Fallback to logo or generic avatar
       description: "Our dedicated support team ensures every student gets the personalized attention they need to excel in their olympiad journey.",
     }
   ];

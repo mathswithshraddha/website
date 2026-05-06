@@ -28,7 +28,7 @@ export default function Preloader() {
     >
       <div className="animate-pulse transform scale-110 transition-transform duration-1000">
         <Image
-          src="/MWS_NOBG.png"
+          src="/MWS_NOBG2.png"
           alt="Maths with Shraddha Loading"
           width={300}
           height={120}

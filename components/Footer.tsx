@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/MWS_NOBG.png"
+                src="/MWS_NOBG2.png"
                 alt="Maths with Shraddha"
                 width={180}
                 height={60}

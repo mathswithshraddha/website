@@ -11,17 +11,17 @@ export default function ExamsNavbar() {
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/">
-              <Image 
-                src="/MWS_NOBG.png" 
-                alt="Maths with Shraddha" 
-                width={150} 
-                height={50} 
-                className="object-contain h-16 w-auto"
+              <Image
+                src="/MWS_NOBG_NAV.png"
+                alt="Maths with Shraddha"
+                width={80}
+                height={80}
+                className="object-contain h-16 w-auto mix-blend-multiply"
                 priority
               />
             </Link>
           </div>
-          
+
           <div className="hidden md:flex items-center space-x-6">
             <Link href="/exams" className="text-primary hover:text-accent font-medium transition-colors">
               All Exams
@@ -38,12 +38,12 @@ export default function ExamsNavbar() {
             <Link href="/exams/mental-maths" className="text-primary hover:text-accent font-medium transition-colors">
               Mental Maths
             </Link>
-            
+
             <Link href="/enquire" className="bg-accent text-white px-6 py-2.5 rounded-full font-semibold hover:bg-accent/90 transition-all shadow-md hover:shadow-lg">
               Book Free Trial
             </Link>
           </div>
-          
+
           <div className="md:hidden flex items-center">
             <Link href="/exams" className="text-primary font-medium text-sm">
               Exams
