@@ -16,6 +16,7 @@ export interface Exam {
   challenges: string[];
   heroTitle: string;
   heroSubheadline: string;
+  logo: string;
 }
 
 export const examsData: Exam[] = [
@@ -46,7 +47,8 @@ export const examsData: Exam[] = [
       "Difficulty bridging school math and olympiad math"
     ],
     heroTitle: "SASMO Exam Preparation in Mumbai & Online",
-    heroSubheadline: "Complete guidance for Singapore and Asian Schools Math Olympiad with structured coaching and mock tests."
+    heroSubheadline: "Complete guidance for Singapore and Asian Schools Math Olympiad with structured coaching and mock tests.",
+    logo: "/exams-logos/SASMO.png"
   },
   {
     slug: "sof",
@@ -75,7 +77,8 @@ export const examsData: Exam[] = [
       "Transitioning from rote to conceptual learning"
     ],
     heroTitle: "SOF Olympiad Preparation (IMO, NSO, IEO)",
-    heroSubheadline: "Expert coaching for Science Olympiad Foundation exams including International Mathematics Olympiad."
+    heroSubheadline: "Expert coaching for Science Olympiad Foundation exams including International Mathematics Olympiad.",
+    logo: "/exams-logos/SOF_IMO.jpeg"
   },
   {
     slug: "ipm",
@@ -104,7 +107,8 @@ export const examsData: Exam[] = [
       "Managing stress during timed tests"
     ],
     heroTitle: "IPM Maths Preparation & Coaching",
-    heroSubheadline: "Master arithmetic and mental math with speed training and precision exercises."
+    heroSubheadline: "Master arithmetic and mental math with speed training and precision exercises.",
+    logo: "/exams-logos/IPM.avif"
   },
   {
     slug: "mental-maths",
@@ -133,7 +137,8 @@ export const examsData: Exam[] = [
       "Maintaining accuracy at speed"
     ],
     heroTitle: "Mental Maths Classes for Kids (Grades 2-9)",
-    heroSubheadline: "Speed math training for brain development with proven techniques and personalized attention."
+    heroSubheadline: "Speed math training for brain development with proven techniques and personalized attention.",
+    logo: "/exams-logos/MmcGmseLogo.jpeg"
   }
 ];
 
@@ -143,7 +148,8 @@ export const examCards = examsData.map(exam => ({
   fullName: exam.name,
   description: exam.description,
   difficulty: exam.difficulty,
-  link: `/exams/${exam.slug}`
+  link: `/exams/${exam.slug}`,
+  logo: exam.logo
 }));
 
 export const whyOlympiads = [

@@ -9,7 +9,7 @@ export default function CoursesSection() {
   ];
 
   return (
-    <section id="courses" className="py-24 bg-gray-50">
+    <section id="courses" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-sm mb-4">
@@ -43,7 +43,7 @@ export default function CoursesSection() {
           </div>
 
           {/* Course 2 */}
-          <div className="bg-primary rounded-3xl p-8 shadow-xl transition-all border border-primary relative group overflow-hidden transform md:-translate-y-4">
+          <div className="bg-primary rounded-3xl p-8 shadow-xl transition-all border border-primary relative group overflow-hidden">
             <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
             <Globe className="w-10 h-10 text-accent mb-6 relative z-10" />
             <h3 className="text-2xl font-bold text-white mb-4 relative z-10">Olympiad Preparation</h3>

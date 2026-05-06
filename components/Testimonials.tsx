@@ -61,19 +61,13 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-primary text-3xl md:text-4xl font-heading font-bold mb-6">
-            Trusted by Parents, Loved by Students
-          </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what parents are saying about their child's transformation.
-          </p>
+    <section id="testimonials" className="py-24 w-full overflow-hidden">
+        <div className="bg-purple text-white py-5 px-4 text-center text-xl sm:text-3xl md:text-5xl font-heading font-bold mb-12 md:mb-16 shadow-lg">
+          What Students & Parents Say
         </div>
 
         <div 
-          className="relative"
+          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onTouchStart={() => setIsHovered(true)}
@@ -92,7 +86,7 @@ export default function Testimonials() {
             {reviews.map((src, index) => (
               <div 
                 key={index} 
-                className="flex-none w-[280px] md:w-[320px] aspect-[9/16] relative rounded-2xl overflow-hidden shadow-md border-4 border-white snap-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="flex-none w-[280px] md:w-[320px] aspect-[9/16] relative rounded-[2.5rem] overflow-hidden shadow-xl border-4 border-white snap-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
               >
                 <Image
                   src={src}
@@ -130,17 +124,9 @@ export default function Testimonials() {
           </button>
 
           {/* Fade gradients */}
-          <div className="absolute top-0 bottom-0 left-0 w-12 md:w-24 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none -ml-4" />
-          <div className="absolute top-0 bottom-0 right-0 w-12 md:w-24 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none -mr-4" />
+          <div className="absolute top-0 bottom-0 left-0 w-12 md:w-24 bg-gradient-to-r from-background to-transparent pointer-events-none -ml-4" />
+          <div className="absolute top-0 bottom-0 right-0 w-12 md:w-24 bg-gradient-to-l from-background to-transparent pointer-events-none -mr-4" />
         </div>
-        
-        <div className="mt-12 text-center">
-           <a href="https://wa.me/919969174811?text=Hi%20Shraddha%20Ma'am%2C%20I'm%20interested%20in%20a%20free%20trial." target="_blank" rel="noopener noreferrer" className="inline-block bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
-             Book Free Trial for June Batch
-           </a>
-           <p className="mt-4 text-sm text-gray-500">Only a few seats per batch</p>
-        </div>
-      </div>
       
       <style dangerouslySetInnerHTML={{__html: `
         .hide-scrollbar::-webkit-scrollbar {

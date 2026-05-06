@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Fredoka, Fraunces } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Preloader from "@/components/Preloader";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
+const fredoka = Fredoka({ subsets: ["latin"], variable: "--font-fredoka" });
+const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 
 export const metadata: Metadata = {
   title: "Maths with Shraddha | Premium Mathematics & Olympiad Coaching",
@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen flex flex-col bg-white text-gray-900`}>
+      <body className={`${fredoka.variable} ${fraunces.variable} font-sans min-h-screen flex flex-col bg-background text-primary`}>
         <Preloader />
         {children}
         <Footer />

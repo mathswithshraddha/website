@@ -7,27 +7,24 @@ interface CoreStoryProps {
 
 export default function CoreStory({ isShort = false }: CoreStoryProps) {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <div className="w-full lg:w-1/2">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-accent/10 rounded-[2.5rem] transform -rotate-3"></div>
-              <div className="relative bg-white rounded-3xl p-2 shadow-xl">
-                <div className="rounded-2xl bg-white overflow-hidden relative aspect-[4/3] w-full">
-                  <Image
-                    src="/Shraddha Mam.jpg"
-                    alt="Shraddha Panchal, Founder of Maths with Shraddha"
-                    fill
-                    className="object-cover rounded-2xl"
-                  />
-                </div>
+            <div className="relative flex justify-center items-center w-full">
+              <div className="relative aspect-square w-full max-w-[500px]">
+                <Image
+                  src="/IMAGE2.png"
+                  alt="Shraddha Panchal, Founder of Maths with Shraddha"
+                  fill
+                  className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                />
               </div>
             </div>
           </div>
 
           <div className="w-full lg:w-1/2">
-            <h2 className="text-primary text-3xl md:text-4xl font-heading font-bold mb-6">
+            <h2 className="text-primary text-2xl md:text-3xl lg:text-4xl font-heading font-bold mb-4 md:mb-6">
               Mrs. Shraddha Panchal
             </h2>
             <p className="text-sm md:text-base font-semibold text-accent mb-5 leading-relaxed">
@@ -37,7 +34,7 @@ export default function CoreStory({ isShort = false }: CoreStoryProps) {
             <p className="text-gray-600 text-lg mb-6 leading-relaxed">
               I have been teaching mathematics since 1991, and over the years I noticed the same pattern again and again:
               smart kids were losing their confidence simply because they were taught to memorize steps instead of understanding the logic.
-              I started Maths with Shraddha to change that.
+              I started teaching maths to change that.
             </p>
 
             {!isShort && (

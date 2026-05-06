@@ -47,11 +47,8 @@ export default function HeroSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-6 animate-fade-in-up">
-            Teaching Mathematics Since 1991
-          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight mb-6 leading-tight animate-fade-in-up-delay-1">
-            Help your child stop fearing math and <span className="text-accent">start understanding it.</span>
+            <span className="text-accent">Maths with Shraddha</span> Conceptual Math Class for Competitive Exams SOF, Global Mental Math, IPM, SASMO.
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light animate-fade-in-up-delay-2">
             I teach math the way it actually makes sense to kids. No endless memorizing, just clear logic that builds confidence and improves grades.

@@ -14,7 +14,7 @@ export default function ExamsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-gray-900 font-sans">
+    <div className="min-h-screen flex flex-col bg-background text-gray-900 font-sans">
       <ExamsNavbar />
       <main className="flex-1 pt-20">
         {children}

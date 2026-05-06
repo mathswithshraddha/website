@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function EnquirePage() {
   return (
-    <div className="min-h-screen bg-gray-50 relative overflow-hidden">
+    <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Decorative Background Pattern */}
       <div className="absolute inset-0 math-pattern pointer-events-none opacity-[0.03]"></div>
       

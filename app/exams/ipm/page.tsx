@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { MessageCircle, ArrowRight, CheckCircle, XCircle } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { examsData } from "@/data/exams";
 import CTASection from "@/components/exams/CTASection";
@@ -41,60 +42,67 @@ export default function IPMPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-primary text-white">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-          </svg>
-        </div>
+      <section className="relative pt-12 pb-16 px-4">
+        <div className="max-w-7xl mx-auto rounded-[3rem] overflow-hidden bg-primary text-white relative shadow-2xl py-20 px-4">
+          <div className="absolute inset-0 opacity-10">
+            <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+          </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-6">
-              Annual Mathematics Competition for Arithmetic Excellence
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center max-w-4xl mx-auto flex flex-col items-center">
+              <div className="inline-block px-6 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-sm font-bold mb-8 shadow-lg">
+                Annual Mathematics Competition for Arithmetic Excellence
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight mb-8 leading-tight">
+                IPM Maths Preparation in <span className="text-accent">Mumbai</span> & Online
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-medium">
+                {exam.fullDescription}
+              </p>
+              <UrgencyBadge tone="dark" className="mb-8" />
+              
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
+                <Link href="/enquire" className="w-full sm:w-auto bg-accent text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all">
+                  Book Free Trial for June Batch
+                </Link>
+                <a href="https://wa.me/919969174811" className="w-full sm:w-auto bg-white/20 backdrop-blur-md border border-white/30 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all flex items-center justify-center">
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Reserve Your Seat for June
+                </a>
+              </div>
+              <p className="text-sm text-white/70 font-medium">Only a few seats per batch</p>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 leading-tight">
-              IPM Maths Preparation in <span className="text-accent">Mumbai</span> & Online
-            </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light">
-              {exam.fullDescription}
-            </p>
-            <UrgencyBadge tone="dark" className="mb-6" />
-            
-            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
-              <Link href="/enquire" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl text-center">
-                Book Free Trial for June Batch
-              </Link>
-              <a href="https://wa.me/919969174811" className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all flex items-center justify-center">
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Reserve Your Seat for June
-              </a>
-            </div>
-            <p className="-mt-10 mb-16 text-sm text-gray-300">Only a few seats per batch</p>
           </div>
         </div>
       </section>
 
       {/* What is IPM */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">What is IPM?</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                <span className="font-semibold text-primary">{exam.fullForm}</span> is an annual mathematics competition that focuses on arithmetic fluency, calculation speed, and mental math skills.
-              </p>
-              <p className="text-gray-600 mb-6">
-                Unlike traditional olympiads that test conceptual understanding, IPM specifically tests how quickly and accurately students can perform arithmetic operations. It is conducted in two rounds - a qualifier and the final.
-              </p>
-              <p className="text-gray-600">
-                Doing well in IPM requires strong mental calculation abilities, quick recall of mathematical facts, and the ability to work accurately under time pressure. These skills are invaluable for all areas of mathematics and problem-solving.
-              </p>
+            <div className="flex flex-col md:flex-row gap-8 items-center">
+              <div className="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 bg-white rounded-2xl shadow-sm p-4">
+                <Image src={exam.logo} alt={exam.name} fill className="object-contain p-4" />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">What is {exam.name}?</h2>
+                <p className="text-lg text-gray-600 mb-6">
+                  <span className="font-semibold text-primary">{exam.fullForm}</span> is an annual mathematics competition that focuses on arithmetic fluency, calculation speed, and mental math skills.
+                </p>
+                <p className="text-gray-600 mb-6">
+                  Unlike traditional olympiads that test conceptual understanding, IPM specifically tests how quickly and accurately students can perform arithmetic operations. It is conducted in two rounds - a qualifier and the final.
+                </p>
+                <p className="text-gray-600">
+                  Doing well in IPM requires strong mental calculation abilities, quick recall of mathematical facts, and the ability to work accurately under time pressure. These skills are invaluable for all areas of mathematics and problem-solving.
+                </p>
+              </div>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-xl font-bold text-primary mb-6">Key Details</h3>
