@@ -1,13 +1,19 @@
 "use client";
 // Force cache invalidation
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   const navLinks = [
     { name: "Exams", href: "/exams" },
@@ -22,7 +28,7 @@ export default function Navbar() {
   return (
     <>
       <div className="fixed top-3 left-0 right-0 z-50 px-3 sm:px-5 flex justify-center w-full pointer-events-none">
-        <nav className="w-full max-w-7xl pointer-events-auto"
+        <nav className="w-full max-w-7xl pointer-events-auto transition-all duration-300 overflow-hidden"
           style={{
             background: "rgba(250, 237, 223, 0.55)",
             backdropFilter: "blur(20px)",
@@ -70,56 +76,56 @@ export default function Navbar() {
               </button>
             </div>
           </div>
+          
+          {/* Expanded mobile menu within the pill */}
+          <div 
+            className={`md:hidden flex flex-col px-6 transition-all duration-300 ease-in-out ${
+              isOpen ? "max-h-[80vh] opacity-100 pb-8" : "max-h-0 opacity-0"
+            }`}
+          >
+            <div className="flex flex-col space-y-4 pt-4 border-t border-primary/10 overflow-y-auto" style={{ maxHeight: 'calc(80vh - 150px)' }}>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-xl font-bold text-primary hover:text-accent transition-colors py-1"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              
+              <div className="mt-4 pt-4 flex flex-col gap-3">
+                <Link
+                  href="/enquire"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full text-center bg-accent text-white px-6 py-3 rounded-xl font-bold hover:bg-accent/90 transition-all shadow-md"
+                >
+                  Book Your Free Trial
+                </Link>
+                <a
+                  href="https://wa.me/919969174811?text=Hi%20Shraddha%20Ma'am%2C%20I'm%20interested%20in%20a%20free%20trial."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full text-center bg-[#25D366] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#1ebd5c] transition-all shadow-md"
+                >
+                  Chat on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
         </nav>
       </div>
-
-      {/* Mobile Menu Overlay */}
+      
+      {/* Click outside to close (optional, but good for UX) */}
       {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/40 z-30 md:hidden backdrop-blur-sm transition-opacity"
+        <div 
+          className="fixed inset-0 z-40 md:hidden"
           onClick={() => setIsOpen(false)}
+          aria-hidden="true"
         />
       )}
-
-      {/* Mobile Menu Drawer */}
-      <div
-        className={`fixed top-0 right-0 w-4/5 max-w-sm h-full bg-white z-40 transform transition-transform duration-300 ease-in-out md:hidden flex flex-col shadow-2xl ${isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-      >
-        <div className="flex flex-col h-full px-6 py-8 overflow-y-auto">
-          <div className="flex flex-col space-y-6 flex-grow">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-2xl font-bold text-primary hover:text-accent transition-colors border-b border-gray-100 pb-4"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-auto pt-8 border-t border-gray-100 flex flex-col gap-4">
-            <Link
-              href="/enquire"
-              onClick={() => setIsOpen(false)}
-              className="w-full text-center bg-accent text-white px-6 py-4 rounded-xl font-bold text-lg hover:bg-accent/90 transition-all shadow-lg"
-            >
-              Book Your Free Trial
-            </Link>
-            <a
-              href="https://wa.me/919969174811?text=Hi%20Shraddha%20Ma'am%2C%20I'm%20interested%20in%20a%20free%20trial."
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
-              className="w-full text-center bg-[#25D366] text-white px-6 py-4 rounded-xl font-bold text-lg hover:bg-[#1ebd5c] transition-all shadow-lg flex items-center justify-center"
-            >
-              Chat on WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
     </>
   );
 }

@@ -22,11 +22,12 @@ export default function Home() {
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow/20 rounded-full blur-3xl opacity-60 mix-blend-multiply" />
           <div className="absolute top-20 right-1/4 w-80 h-80 bg-green/10 rounded-full blur-3xl opacity-60 mix-blend-multiply" />
 
-          {/* Floating Math Symbols (Subtle) */}
+          {/* Floating Math Symbols (Subtle) 
           <div className="absolute top-20 left-[15%] text-primary/10 text-6xl font-black rotate-12">∑</div>
           <div className="absolute top-40 right-[15%] text-orange/10 text-5xl font-black -rotate-12">π</div>
           <div className="absolute bottom-20 left-[20%] text-green/10 text-5xl font-black rotate-45">∞</div>
           <div className="absolute bottom-32 right-[20%] text-primary/10 text-6xl font-black -rotate-6">∫</div>
+          */}
 
           {/* Subtle Grid Pattern */}
           <div className="absolute inset-0 opacity-[0.03]">
@@ -109,7 +110,7 @@ export default function Home() {
             As we move into a future where children will compete alongside advanced technology, including AI, it becomes essential for them to develop deep thinking skills and independent reasoning.
           </p>
           <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed font-medium italic">
-            I strongly believe that every child can excel in math with the right guidance and approach. Teaching mathematics is not just my profession;it&apos;s my passion.
+            I strongly believe that every child can excel in math with the right guidance and approach. Teaching mathematics is not just my profession, it&apos;s my passion.
           </p>
         </div>
         <div className="flex-1 flex justify-center items-center w-full">
@@ -182,7 +183,7 @@ export default function Home() {
           {[
             { text: "Mental Maths", bg: "bg-white", textClass: "text-primary" },
             { text: "SOF Maths Olympiad", bg: "bg-white", textClass: "text-primary" },
-            { text: "IPM Olympiad", bg: "bg-[#0c4a6e]", textClass: "text-white" }
+            { text: "IPM Olympiad", bg: "bg-white", textClass: "text-primary" }
           ].map((prog, i) => (
             <div key={i} className={`${prog.bg} ${prog.textClass} px-6 sm:px-10 py-3 sm:py-5 rounded-full text-base sm:text-xl md:text-2xl font-bold shadow-lg`}>
               {prog.text}

@@ -18,7 +18,7 @@ export default function SchoolsSection() {
 
   return (
     <section className="py-16 w-full flex flex-col items-center">
-        <div className="bg-primary text-white px-12 py-4 rounded-full text-3xl md:text-4xl font-heading font-bold mb-12 shadow-lg text-center">
+        <div className="bg-primary text-white px-6 sm:px-12 py-3 sm:py-4 rounded-3xl sm:rounded-full text-xl sm:text-2xl md:text-4xl font-heading font-bold mb-12 shadow-lg text-center mx-4 sm:mx-0 max-w-[90%] sm:max-w-none">
           Trusted by Parents from Top Schools
         </div>
 

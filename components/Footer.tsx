@@ -56,7 +56,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start text-gray-600">
                 <MapPin className="w-5 h-5 text-accent mr-3 mt-0.5 shrink-0" />
-                <span>Kanjurmarg East, Mumbai</span>
+                <span>Mumbai, Maharashtra </span>
               </li>
             </ul>
           </div>
@@ -67,8 +67,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Maths with Shraddha. All rights reserved.
           </p>
           <div className="flex space-x-4 text-gray-500">
-            <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

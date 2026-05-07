@@ -118,6 +118,7 @@ export default function ExamsPage() {
                       {exam.name}
                     </h3>
                   </div>
+                  {/* Commented out difficulty level marker
                   <div className="flex items-center space-x-1">
                     {[...Array(10)].map((_, i) => (
                       <div 
@@ -127,6 +128,7 @@ export default function ExamsPage() {
                       />
                     ))}
                   </div>
+                  */}
                 </div>
                 <p className="text-gray-600 font-medium mb-4">{exam.description}</p>
                 <div className="flex items-center text-accent font-bold group-hover:translate-x-2 transition-transform">

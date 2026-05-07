@@ -219,7 +219,7 @@ export default function EnquiryForm() {
   return (
     <div id="form" className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-500">
       {/* Progress Header */}
-      <div className="bg-gray-50 border-b border-gray-100 px-6 py-8 sm:px-10">
+      <div className="hidden sm:block bg-gray-50 border-b border-gray-100 px-4 py-8 sm:px-10">
         <div className="flex items-center justify-between relative mb-8">
           {/* Progress Line */}
           <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 z-0"></div>
@@ -236,7 +236,7 @@ export default function EnquiryForm() {
             return (
               <div key={step.id} className="relative z-10 flex flex-col items-center">
                 <div 
-                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
                     isActive 
                       ? "bg-accent text-white ring-4 ring-red-100 scale-110 shadow-lg" 
                       : isCompleted 
@@ -244,9 +244,13 @@ export default function EnquiryForm() {
                         : "bg-white border-2 border-gray-200 text-gray-400"
                   }`}
                 >
-                  {isCompleted ? <CheckCircle className="w-6 h-6" /> : <StepIcon className="w-5 h-5" />}
+                  {isCompleted ? <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" /> : <StepIcon className="w-4 h-4 sm:w-5 sm:h-5" />}
                 </div>
-                <span className={`absolute -bottom-7 text-[10px] sm:text-xs font-bold whitespace-nowrap transition-colors duration-300 ${isActive ? "text-accent" : "text-gray-400"}`}>
+                <span className={`absolute -bottom-7 left-1/2 -translate-x-1/2 text-[10px] sm:text-xs font-bold whitespace-nowrap transition-all duration-300 ${
+                  isActive 
+                    ? "text-accent opacity-100 translate-y-0" 
+                    : "text-gray-400 opacity-0 sm:opacity-100 translate-y-1 sm:translate-y-0"
+                }`}>
                   {step.title}
                 </span>
               </div>

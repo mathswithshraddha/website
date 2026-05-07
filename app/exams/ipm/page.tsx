@@ -8,9 +8,9 @@ import FAQSection from "@/components/exams/FAQSection";
 import UrgencyBadge from "@/components/UrgencyBadge";
 
 export const metadata: Metadata = {
-  title: "IPM Maths Preparation | International Pingala's Math Coaching",
+  title: "IPM Maths Preparation | Institute for Promotion of Mathematics",
   description: "Expert IPM maths preparation in Mumbai and online. Master arithmetic and mental math with speed training. Book free trial today.",
-  keywords: "IPM maths preparation, IPM syllabus, IPM coaching, International Pingala's Math, mental maths classes, speed maths training, arithmetic fluency",
+  keywords: "IPM maths preparation, IPM syllabus, IPM coaching, Institute for Promotion of Mathematics, mental maths classes, speed maths training, arithmetic fluency",
 };
 
 const exam = examsData[2];
@@ -18,7 +18,7 @@ const exam = examsData[2];
 const faqs = [
   {
     question: "What is IPM?",
-    answer: "IPM stands for International Pingala's Math, an annual mathematics competition focused on arithmetic fluency, calculation speed, and mental math skills. It tests students' mathematical agility and precision under time pressure."
+    answer: "IPM stands for Institute for Promotion of Mathematics, an annual mathematics competition focused on arithmetic fluency, calculation speed, and mental math skills. It tests students' mathematical agility and precision under time pressure."
   },
   {
     question: "When does IPM registration open?",
@@ -164,8 +164,8 @@ export default function IPMPage() {
         </div>
       </section>
 
-      {/* Difficulty Scale */}
-      <section className="py-20 bg-gray-50">
+      {/* Difficulty Scale 
+       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Difficulty Level</h2>
@@ -194,8 +194,9 @@ export default function IPMPage() {
           </div>
         </div>
       </section>
+      */}
 
-      {/* Common Challenges */}
+      {/* Common Challenges 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -218,8 +219,9 @@ export default function IPMPage() {
           </div>
         </div>
       </section>
+      */}
 
-      {/* Benefits */}
+      {/* Benefits 
       <section className="py-20 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -239,6 +241,7 @@ export default function IPMPage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* How We Help */}
       <section className="py-20 bg-gray-50">

@@ -61,13 +61,13 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-24 w-full overflow-hidden">
-        <div className="bg-purple text-white py-5 px-4 text-center text-xl sm:text-3xl md:text-5xl font-heading font-bold mb-12 md:mb-16 shadow-lg">
+    <section id="testimonials" className="py-24 w-full overflow-hidden flex flex-col items-center">
+        <div className="bg-purple text-white px-6 sm:px-12 py-3 sm:py-5 rounded-3xl sm:rounded-full text-xl sm:text-2xl md:text-4xl font-heading font-bold mb-12 md:mb-16 shadow-lg text-center mx-4 sm:mx-0 max-w-[90%] sm:max-w-none">
           What Students & Parents Say
         </div>
 
         <div 
-          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onTouchStart={() => setIsHovered(true)}

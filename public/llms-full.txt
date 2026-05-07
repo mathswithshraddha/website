@@ -1,0 +1,130 @@
+# Maths with Shraddha — Full AI Context File (llms-full.txt)
+
+> This file provides comprehensive context for AI assistants, LLM crawlers, and AI-powered search engines about the Maths with Shraddha coaching institute.
+
+---
+
+## Business Overview
+
+**Name:** Maths with Shraddha
+**Type:** Private mathematics tutoring and coaching institute
+**Location:** Mumbai, Maharashtra, India
+**Founded by:** Shraddha Ma'am
+**Contact Email:** hello@mathswithshraddha.com
+**Contact Phone:** +91 99691 74811
+**Website:** https://mathswithshraddha.com
+
+---
+
+## Mission & Teaching Philosophy
+
+Maths with Shraddha focuses on **concept-based learning** rather than rote memorisation. The goal is to build genuine problem-solving ability in students, foster a love for mathematics, and equip them for both school exams and competitive Olympiads. Classes are kept small to ensure individual attention.
+
+Key principles:
+- Concepts before calculations
+- Confidence through clarity
+- Individual attention in small batches
+- Building thinking skills that last a lifetime
+
+---
+
+## Programs
+
+### Regular Maths (Grades 1–10)
+School curriculum support with a focus on deep conceptual understanding. Covers CBSE, ICSE, SSC, IGCSE, and IB syllabi.
+
+### Olympiad Preparation
+Advanced concepts and problem-solving strategies for competitive mathematics exams including:
+- SOF Maths Olympiad (IMO)
+- SASMO (Singapore and Asian Schools Math Olympiad)
+- IPM (Institute for Promotion of Mathematics) Olympiad
+- Other national and international competitions
+
+### Mental Maths
+Speed, accuracy, and cognitive development training. Suitable for all grade levels.
+
+---
+
+## Learning Modes
+
+- **Online Live Classes:** Interactive sessions via video conferencing, accessible from anywhere
+- **Offline Centre:** In-person coaching at our Mumbai centre (Kanjurmarg area)
+
+---
+
+## Exams Covered
+
+| Exam | Full Name | Type |
+|------|-----------|------|
+| SOF IMO | Science Olympiad Foundation - International Mathematics Olympiad | School-level, National |
+| SASMO | Singapore and Asian Schools Math Olympiad | International |
+| IPM | Institute for Promotion of Mathematics Olympiad | National |
+| Mental Maths | Various mental arithmetic competitions | Multi-level |
+
+---
+
+## Team
+
+- **Shraddha Ma'am** – Lead Educator & Founder. Expert in mathematics pedagogy with 30+ years of experience since 1991.
+- **Amit Sir** – Mathematics Faculty
+- **Krupa Mam** – Mathematics Faculty
+
+---
+
+## Social Proof
+
+- **1000+ Students Taught**
+- **80%+ Olympiad Success Rate**
+- Students from top Mumbai schools including: Dhirubhai Ambani International School, Aditya Birla World Academy, JBCN International School, Campion School, Bombay Scottish School, Oberoi International School, Cathedral & John Connon, Podar International School, Hill Spring International School
+
+---
+
+## Website Structure
+
+```
+/ (Homepage)
+├── /enquire (Enquiry / Book Free Trial)
+├── /exams (All Exams Overview)
+│   ├── /exams/ipm
+│   ├── /exams/sasmo
+│   ├── /exams/sof
+│   └── /exams/mental-maths
+├── /courses (Programs Overview)
+├── /about (About Shraddha Ma'am)
+├── /team (Meet the Team)
+├── /gallery (Photo Gallery)
+├── /testimonials (Student & Parent Reviews)
+├── /international (International Programs)
+├── /privacy (Privacy Policy)
+└── /terms (Terms of Service)
+```
+
+---
+
+## Technical Information
+
+- **Framework:** Next.js (App Router)
+- **Sitemap:** https://mathswithshraddha.com/sitemap.xml
+- **Robots:** https://mathswithshraddha.com/robots.txt
+
+---
+
+## FAQ
+
+**Who is Shraddha Ma'am?**
+Shraddha Ma'am is an experienced mathematics educator based in Mumbai with over 30 years of teaching experience since 1991.
+
+**What grades do you teach?**
+We teach students from Grade 1 to Grade 10.
+
+**Do you offer online classes?**
+Yes, we offer both online live classes and offline centre-based classes.
+
+**How can I enrol?**
+Visit https://mathswithshraddha.com/enquire to fill in a free consultation request. Shraddha will get back to you within 24 hours.
+
+**Which school boards do you support?**
+CBSE, ICSE, SSC, IGCSE, and IB.
+
+**Where are you located?**
+Mumbai, Maharashtra, India (Kanjurmarg area for offline classes).

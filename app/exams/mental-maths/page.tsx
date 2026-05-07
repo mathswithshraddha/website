@@ -164,7 +164,7 @@ export default function MentalMathsPage() {
         </div>
       </section>
 
-      {/* Difficulty Scale */}
+      {/* Difficulty Scale 
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -194,8 +194,9 @@ export default function MentalMathsPage() {
           </div>
         </div>
       </section>
+      */}
 
-      {/* Common Challenges */}
+      {/* Common Challenges 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -218,8 +219,9 @@ export default function MentalMathsPage() {
           </div>
         </div>
       </section>
+      */}
 
-      {/* Benefits */}
+      {/* Benefits 
       <section className="py-20 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -239,6 +241,7 @@ export default function MentalMathsPage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* How We Help */}
       <section className="py-20 bg-gray-50">
