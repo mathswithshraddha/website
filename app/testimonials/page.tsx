@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import ResultsSection from "@/components/ResultsSection";
+import ShortsCarousel from "@/components/ShortsCarousel";
 import FinalCTA from "@/components/FinalCTA";
 
 export const metadata = {
@@ -23,24 +24,7 @@ export default function TestimonialsPage() {
           </p>
         </div>
 
-        {/* Parent Highlights Section */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-12 text-primary">Key Highlights from Parents</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { text: "My daughter improved from 62% to 94% in just one semester.", tag: "Grade Improvement" },
-                { text: "He used to cry before math exams. Now he looks forward to them.", tag: "Confidence Boost" },
-                { text: "Successfully cleared the SASMO competitive round!", tag: "Olympiad Success" }
-              ].map((highlight, idx) => (
-                <div key={idx} className="bg-white p-8 rounded-[2rem] border-4 border-white shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all flex flex-col justify-between">
-                  <p className="text-primary font-medium text-lg italic mb-6">"{highlight.text}"</p>
-                  <span className="text-sm font-bold text-green uppercase tracking-wider bg-green/10 px-4 py-2 rounded-full inline-block w-max">{highlight.tag}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ShortsCarousel />
 
         <Testimonials />
         <ResultsSection />
