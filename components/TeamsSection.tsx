@@ -15,10 +15,10 @@ export default function TeamsSection() {
       description: "With 15+ years of teaching experience, Amit Panchal specializes in Competitive Mathematics, Olympiads, Mental Math, and Board Mathematics for ICSE, CBSE, and IGCSE students. Known for concept clarity, logical thinking, and personalized mentoring, he helps students build confidence, speed, and strong problem-solving skills. Qualification: B.Com, LLB, B.Ed, B.A., M.A.",
     },
     {
-      name: "Krupa Mam",
-      role: "Academic Mentor & Co-Ordinator",
+      name: "Krupa Karan Chauhan",
+      role: "Mathematics Educator",
       image: "/team/krupamam.jpg",
-      description: "Providing personalized attention and expert support to help students excel in their olympiad journey.",
+      description: "Krupa Karan Chauhan is a Mathematics educator with 15+ years of experience, including 8 years at Sri Sri Ravishankar Vidya Mandir, associated with Art of Living. She believes that mathematics is not just about numbers, but about developing logical thinking, confidence, and problem-solving skills. Her teaching approach focuses on making maths simple, engaging, and enjoyable for every student. Qualification: B.Sc., B.Ed., MA.Ed.",
     }
   ];
 
