@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -65,8 +65,15 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
+            {/* Mobile menu button & Contact Now */}
+            <div className="md:hidden flex items-center gap-3">
+              <a 
+                href="tel:+919969174811" 
+                className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full text-xs font-bold shadow-md active:scale-95 transition-transform"
+              >
+                <Phone className="w-3 h-3" />
+                Contact Now
+              </a>
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-primary focus:outline-none p-2 -mr-1"
