@@ -72,7 +72,7 @@ export default function Home() {
             </h1>
 
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading text-primary/90 font-bold">
-              Conceptual Maths Classes
+              Conceptual Maths Classes for <span className="text-orange">Grade 1 to 10</span>
             </h2>
 
             <p className="text-lg md:text-xl font-sans text-gray-600 font-medium max-w-2xl mx-auto leading-relaxed">
