@@ -1,8 +1,13 @@
 export default function GallerySection() {
-  // Generate the array of 30 image paths based on the file naming convention
-  const images = Array.from({ length: 30 }, (_, i) =>
-    `/Maths with Shraddha Students Gallery ${i + 1}. .jpg`
-  );
+  const images = [
+    ...Array.from({ length: 10 }, (_, i) => {
+      if (i < 2) return `/photo_${i + 1}_2026-05-08_22-05-44.jpg`;
+      return `/photo_${i + 1}_2026-05-08_22-06-10.jpg`;
+    }),
+    ...Array.from({ length: 30 }, (_, i) =>
+      `/Maths with Shraddha Students Gallery ${i + 1}. .jpg`
+    )
+  ];
 
   return (
     <section id="gallery" className="py-24 bg-white">
