@@ -34,10 +34,10 @@ export default function EnquirePage() {
 
           <EnquiryForm />
 
-          <footer className="mt-16 pt-16 border-t border-gray-200">
+          <footer className="mt-16 pt-16 border-t border-gray-200 font-sans">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Have questions before enrolling?</h3>
+                <h3 className="text-2xl font-heading font-bold text-primary mb-4">Have questions before enrolling?</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   We're here to help you make the best decision for your child's education. Chat with us for a quick consultation or to know more about our batch timings.
                 </p>

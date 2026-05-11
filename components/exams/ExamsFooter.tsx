@@ -4,7 +4,7 @@ import { MessageCircle, Mail, MapPin, Clock } from "lucide-react";
 
 export default function ExamsFooter() {
   return (
-    <footer className="bg-primary text-white py-16">
+    <footer className="bg-primary text-white py-16 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-2">
@@ -37,7 +37,7 @@ export default function ExamsFooter() {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+            <h3 className="text-lg font-heading font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li><Link href="/exams" className="text-gray-300 hover:text-white transition-colors">All Exams</Link></li>
               <li><Link href="/exams/sasmo" className="text-gray-300 hover:text-white transition-colors">SASMO Preparation</Link></li>
@@ -49,7 +49,7 @@ export default function ExamsFooter() {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-6">Contact</h3>
+            <h3 className="text-lg font-heading font-semibold mb-6">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-center space-x-3 text-gray-300">
                 <Clock className="w-5 h-5 text-accent" />

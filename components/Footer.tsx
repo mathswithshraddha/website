@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-background pt-16 pb-8 border-t border-gray-200">
+    <footer className="bg-background pt-16 pb-8 border-t border-gray-200 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold text-primary mb-6">Quick Links</h4>
+            <h4 className="text-lg font-heading font-bold text-primary mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li><Link href="/about" className="text-gray-600 hover:text-accent transition-colors">Our Story</Link></li>
               <li><Link href="/courses" className="text-gray-600 hover:text-accent transition-colors">Our Programs</Link></li>
@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold text-primary mb-6">Contact Us</h4>
+            <h4 className="text-lg font-heading font-bold text-primary mb-6">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start text-gray-600">
                 <Phone className="w-5 h-5 text-accent mr-3 mt-0.5 shrink-0" />
