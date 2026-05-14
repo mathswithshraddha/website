@@ -5,6 +5,14 @@ import { Sun, Cloud, Smile, ArrowRight, Users, Clock, Lightbulb } from "lucide-r
 import Testimonials from "@/components/Testimonials";
 import SchoolsSection from "@/components/SchoolsSection";
 import ShortsCarousel from "@/components/ShortsCarousel";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
+
+export const metadata = buildBasicPageMetadata({
+  path: "/",
+  title: "Maths with Shraddha | Olympiad, Mental Maths, and Enrichment Coaching",
+  description:
+    "Premium maths coaching for olympiads, mental maths, SOF IMO, SASMO, and online enrichment across Mumbai, Ahmedabad, top Indian cities, and international markets.",
+});
 
 export default function Home() {
   return (
@@ -143,6 +151,21 @@ export default function Home() {
               </Link>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="pb-16 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Link href="/locations" className="rounded-[2rem] bg-white p-8 shadow-lg hover:-translate-y-1 transition-transform">
+            <p className="text-sm font-bold uppercase tracking-wide text-accent mb-3">Location hub</p>
+            <h2 className="text-2xl font-heading font-bold text-primary mb-3">Explore city-specific maths coaching pages</h2>
+            <p className="text-gray-700">Find locality and city pages for Mumbai, Ahmedabad, Delhi, Bengaluru, Pune, and other priority markets.</p>
+          </Link>
+          <Link href="/olympiads" className="rounded-[2rem] bg-white p-8 shadow-lg hover:-translate-y-1 transition-transform">
+            <p className="text-sm font-bold uppercase tracking-wide text-accent mb-3">Olympiad hub</p>
+            <h2 className="text-2xl font-heading font-bold text-primary mb-3">Compare olympiad programmes and parent guides</h2>
+            <p className="text-gray-700">Navigate SOF IMO, SASMO, mental maths, and planning resources through a dedicated internal-link hub.</p>
+          </Link>
         </div>
       </section>
 

@@ -59,7 +59,7 @@ export default function SeoLandingPage({ content }: SeoLandingPageProps) {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1.6fr_0.8fr] gap-8">
           <div className="space-y-8">
             {content.sections.map((section) => (
-              <section key={section.title} className="rounded-[2rem] bg-white px-6 py-8 shadow-lg">
+              <article key={section.title} className="rounded-[2rem] bg-white px-6 py-8 shadow-lg">
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary mb-4">{section.title}</h2>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   {section.paragraphs.map((paragraph, index) => (
@@ -76,7 +76,7 @@ export default function SeoLandingPage({ content }: SeoLandingPageProps) {
                     ))}
                   </ul>
                 ) : null}
-              </section>
+              </article>
             ))}
 
             <section className="rounded-[2rem] bg-gray-50 px-6 py-8 shadow-sm">
@@ -106,19 +106,44 @@ export default function SeoLandingPage({ content }: SeoLandingPageProps) {
             </section>
 
             <section className="rounded-[2rem] bg-white px-6 py-8 shadow-lg">
-              <h2 className="text-xl font-heading font-bold text-primary mb-5">Useful Next Steps</h2>
-              <div className="space-y-3">
-                {content.relatedLinks.map((link) => (
-                  <Link
-                    key={`${link.href}-${link.label}`}
-                    href={link.href}
-                    className="block rounded-2xl border border-gray-100 px-4 py-4 text-primary font-medium hover:border-accent hover:text-accent transition-colors"
-                  >
-                    {link.label}
-                  </Link>
+              <h2 className="text-xl font-heading font-bold text-primary mb-5">Instructor Credibility</h2>
+              <ul className="space-y-4">
+                {content.instructorPoints.map((point) => (
+                  <li key={point} className="flex gap-3 text-gray-700">
+                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-accent shrink-0" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="rounded-[2rem] bg-white px-6 py-8 shadow-lg">
+              <h2 className="text-xl font-heading font-bold text-primary mb-5">What Parents Commonly Say</h2>
+              <div className="space-y-4">
+                {content.testimonialHighlights.map((point) => (
+                  <blockquote key={point} className="rounded-2xl bg-gray-50 px-4 py-4 text-gray-700 leading-relaxed">
+                    {point}
+                  </blockquote>
                 ))}
               </div>
             </section>
+
+            {content.linkSections.map((section) => (
+              <section key={section.title} className="rounded-[2rem] bg-white px-6 py-8 shadow-lg">
+                <h2 className="text-xl font-heading font-bold text-primary mb-5">{section.title}</h2>
+                <div className="space-y-3">
+                  {section.links.map((link) => (
+                    <Link
+                      key={`${section.title}-${link.href}`}
+                      href={link.href}
+                      className="block rounded-2xl border border-gray-100 px-4 py-4 text-primary font-medium hover:border-accent hover:text-accent transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            ))}
           </aside>
         </div>
       </section>

@@ -6,7 +6,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Preloader from "@/components/Preloader";
 import JsonLd from "@/components/seo/JsonLd";
 import { buildSiteMetadata } from "@/lib/seo/metadata";
-import { buildOrganizationSchema } from "@/lib/seo/schema";
+import { buildInstructorSchema, buildOrganizationSchema } from "@/lib/seo/schema";
 
 const fredoka = Fredoka({ subsets: ["latin"], variable: "--font-fredoka" });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <body className={`${fredoka.className} ${fredoka.variable} font-sans min-h-screen flex flex-col bg-background text-primary`}>
-        <JsonLd data={buildOrganizationSchema()} />
+        <JsonLd data={[buildOrganizationSchema(), buildInstructorSchema()]} />
         <Preloader />
         {children}
         <Footer />

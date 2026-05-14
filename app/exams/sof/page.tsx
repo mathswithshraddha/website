@@ -6,12 +6,22 @@ import { examsData } from "@/data/exams";
 import CTASection from "@/components/exams/CTASection";
 import FAQSection from "@/components/exams/FAQSection";
 import UrgencyBadge from "@/components/UrgencyBadge";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildBasicPageMetadata({
+  path: "/exams/sof",
   title: "SOF Olympiad Preparation | IMO & NSO Coaching in Mumbai & India",
-  description: "Expert SOF olympiad coaching for IMO. Complete preparation with mock tests and personalized attention in Mumbai. Book free trial today.",
-  keywords: "SOF olympiad preparation, IMO exam coaching, SOF maths syllabus, olympiad foundation classes, IMO preparation Mumbai, online SOF coaching India",
-};
+  description:
+    "Expert SOF olympiad coaching for IMO. Complete preparation with mock tests and personalised attention in Mumbai and online.",
+  keywords: [
+    "SOF olympiad preparation",
+    "IMO exam coaching",
+    "SOF maths syllabus",
+    "olympiad foundation classes",
+    "IMO preparation Mumbai",
+    "online SOF coaching India",
+  ],
+});
 
 const exam = examsData[1];
 

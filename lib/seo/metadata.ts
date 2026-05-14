@@ -17,9 +17,6 @@ export function buildSiteMetadata(): Metadata {
     },
     description: siteDescription,
     applicationName: SITE_NAME,
-    alternates: {
-      canonical: SITE_URL,
-    },
     openGraph: {
       type: "website",
       locale: "en_IN",
@@ -40,6 +37,55 @@ export function buildSiteMetadata(): Metadata {
       card: "summary_large_image",
       title: SITE_NAME,
       description: siteDescription,
+      images: [DEFAULT_OG_IMAGE],
+    },
+  };
+}
+
+interface BasicPageMetadataOptions {
+  path: string;
+  title: string;
+  description: string;
+  keywords?: string[];
+  robots?: Metadata["robots"];
+}
+
+export function buildBasicPageMetadata({
+  path,
+  title,
+  description,
+  keywords,
+  robots,
+}: BasicPageMetadataOptions): Metadata {
+  const canonical = path === "/" ? SITE_URL : `${SITE_URL}${path}`;
+
+  return {
+    title,
+    description,
+    keywords,
+    alternates: {
+      canonical,
+    },
+    robots,
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: SITE_NAME,
+      type: "website",
+      images: [
+        {
+          url: DEFAULT_OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
       images: [DEFAULT_OG_IMAGE],
     },
   };
@@ -107,10 +153,10 @@ export function buildProgrammaticMetadata(record: SeoPageRecord): Metadata {
       },
     },
     robots: {
-      index: true,
+      index: record.indexable,
       follow: true,
       googleBot: {
-        index: true,
+        index: record.indexable,
         follow: true,
         "max-image-preview": "large",
         "max-snippet": -1,

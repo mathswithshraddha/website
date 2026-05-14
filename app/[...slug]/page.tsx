@@ -9,10 +9,12 @@ import {
   buildBreadcrumbSchema,
   buildCourseSchema,
   buildFaqSchema,
-  buildLocalBusinessSchema,
+  buildInstructorSchema,
+  buildTutoringServiceSchema,
   buildWebPageSchema,
 } from "@/lib/seo/schema";
 
+export const dynamic = "force-static";
 export const dynamicParams = false;
 export const revalidate = 86400;
 
@@ -51,7 +53,8 @@ export default async function ProgrammaticSeoPage({ params }: PageProps) {
     buildBreadcrumbSchema(content.breadcrumbs),
     buildFaqSchema(content.faqs),
     buildCourseSchema(record),
-    buildLocalBusinessSchema(record),
+    buildTutoringServiceSchema(record),
+    buildInstructorSchema(),
   ];
 
   return (

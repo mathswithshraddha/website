@@ -1,10 +1,13 @@
 import EnquiryForm from "./EnquiryForm";
 import Navbar from "@/components/Navbar";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = {
+export const metadata = buildBasicPageMetadata({
+  path: "/enquire",
   title: "Enquire About Mathematics Classes | Maths with Shraddha",
-  description: "Get personalized guidance and find the right mathematics program for your child. Shraddha Ma'am has been teaching mathematics since 1991.",
-};
+  description:
+    "Get personalised guidance and find the right mathematics programme for your child. Shraddha Mam has been teaching mathematics since 1991.",
+});
 
 export default function EnquirePage() {
   return (

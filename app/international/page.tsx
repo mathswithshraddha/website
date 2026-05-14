@@ -1,10 +1,13 @@
 import Navbar from "@/components/Navbar";
 import { Globe, Clock, MonitorPlay, Users } from "lucide-react";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = {
+export const metadata = buildBasicPageMetadata({
+  path: "/international",
   title: "International Batches | Maths with Shraddha",
-  description: "Specialized online math coaching batches tailored for the timezones of students worldwide.",
-};
+  description:
+    "Specialised online maths coaching batches for international students across the UAE, Qatar, Nepal, Sri Lanka, Brussels, and other global time zones.",
+});
 
 export default function InternationalStudents() {
   return (

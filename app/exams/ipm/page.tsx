@@ -6,12 +6,22 @@ import { examsData } from "@/data/exams";
 import CTASection from "@/components/exams/CTASection";
 import FAQSection from "@/components/exams/FAQSection";
 import UrgencyBadge from "@/components/UrgencyBadge";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildBasicPageMetadata({
+  path: "/exams/ipm",
   title: "IPM Maths Preparation | Institute for Promotion of Mathematics",
-  description: "Expert IPM maths preparation in Mumbai and online. Master arithmetic and mental math with speed training. Book free trial today.",
-  keywords: "IPM maths preparation, IPM syllabus, IPM coaching, Institute for Promotion of Mathematics, mental maths classes, speed maths training, arithmetic fluency",
-};
+  description:
+    "Expert IPM maths preparation in Mumbai and online. Master arithmetic and mental maths with speed training and concept-led fluency work.",
+  keywords: [
+    "IPM maths preparation",
+    "IPM syllabus",
+    "IPM coaching",
+    "Institute for Promotion of Mathematics",
+    "speed maths training",
+    "arithmetic fluency",
+  ],
+});
 
 const exam = examsData[2];
 

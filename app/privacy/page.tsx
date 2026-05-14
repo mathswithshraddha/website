@@ -1,10 +1,17 @@
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = {
+export const metadata = buildBasicPageMetadata({
+  path: "/privacy",
   title: "Privacy Policy | Maths with Shraddha",
-  description: "Read our privacy policy to understand how Maths with Shraddha collects, uses, and protects your personal information.",
-};
+  description:
+    "Read our privacy policy to understand how Maths with Shraddha collects, uses, and protects your personal information.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+});
 
 export default function PrivacyPage() {
   return (

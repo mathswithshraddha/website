@@ -1,10 +1,17 @@
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = {
+export const metadata = buildBasicPageMetadata({
+  path: "/terms",
   title: "Terms of Service | Maths with Shraddha",
-  description: "Read our terms of service to understand the rules and guidelines for using the Maths with Shraddha website and services.",
-};
+  description:
+    "Read our terms of service to understand the rules and guidelines for using the Maths with Shraddha website and services.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+});
 
 export default function TermsPage() {
   return (

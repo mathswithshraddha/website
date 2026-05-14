@@ -6,12 +6,22 @@ import { examsData } from "@/data/exams";
 import CTASection from "@/components/exams/CTASection";
 import FAQSection from "@/components/exams/FAQSection";
 import UrgencyBadge from "@/components/UrgencyBadge";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildBasicPageMetadata({
+  path: "/exams/sasmo",
   title: "SASMO Exam Preparation | Singapore Maths Olympiad Coaching in Mumbai & Online",
-  description: "Expert SASMO exam preparation in Mumbai and online. Complete syllabus coverage, mock tests, and personalized coaching for Grades 2-9. Book your free trial today.",
-  keywords: "SASMO exam preparation, SASMO syllabus, SASMO registration, SASMO coaching India, Singapore maths olympiad, SASMO maths, olympiad preparation Mumbai, online olympiad coaching",
-};
+  description:
+    "Expert SASMO exam preparation in Mumbai and online. Complete syllabus coverage, mock tests, and personalised coaching for Grades 2-9.",
+  keywords: [
+    "SASMO exam preparation",
+    "SASMO syllabus",
+    "SASMO registration",
+    "SASMO coaching India",
+    "Singapore maths olympiad",
+    "online olympiad coaching",
+  ],
+});
 
 const exam = examsData[0];
 

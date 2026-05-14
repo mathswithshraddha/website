@@ -1,6 +1,5 @@
 import {
   comparisonPages,
-  grades,
   parentIntentPages,
   seoExams,
   seoLocations,
@@ -22,6 +21,8 @@ export type SeoPageKind =
   | "online"
   | "international";
 
+export type SitemapGroup = "programs" | "locations" | "olympiads";
+
 export interface SeoPageRecord {
   pathname: string;
   segments: string[];
@@ -33,26 +34,136 @@ export interface SeoPageRecord {
   localTopic?: "maths-classes" | "olympiad-coaching" | "mental-maths-classes";
   parentIntentSlug?: ParentIntentPage["slug"];
   comparisonSlug?: ComparisonPage["slug"];
+  indexable: boolean;
+  qualityScore: number;
+  sitemapGroup: SitemapGroup;
 }
 
-const topCityGradeLocations: LocationKey[] = ["mumbai", "thane", "borivali", "kandivali", "pune"];
-const cityLocations = Object.keys(seoLocations) as LocationKey[];
+type RouteSeed = Omit<SeoPageRecord, "pathname" | "segments" | "indexable" | "qualityScore" | "sitemapGroup">;
 
-function createRecord(pathname: string, record: Omit<SeoPageRecord, "pathname" | "segments">): SeoPageRecord {
+const cityLocations = Object.keys(seoLocations) as LocationKey[];
+const coreLocations: LocationKey[] = [
+  "mumbai",
+  "pune",
+  "ahmedabad",
+  "delhi",
+  "bengaluru",
+  "hyderabad",
+  "chennai",
+  "kolkata",
+];
+const supportingLocalLocations: LocationKey[] = ["thane", "powai"];
+const highIntentExamCityLocations: LocationKey[] = coreLocations;
+const highIntentCityGradeLocations: LocationKey[] = ["mumbai", "ahmedabad", "delhi"];
+const examGradeTargets: Partial<Record<ExamKey, number[]>> = {
+  "sof-imo": [3, 4, 5, 6],
+  sasmo: [4, 5, 6],
+  "mental-maths": [2, 3, 4],
+  ipm: [2, 3, 4],
+};
+const cityGradeTargets: Partial<Record<ExamKey, number[]>> = {
+  "sof-imo": [3, 4, 5],
+  sasmo: [4, 5],
+  "mental-maths": [2, 3, 4],
+};
+
+function createRawRecord(pathname: string, record: RouteSeed): SeoPageRecord {
   const segments = pathname.replace(/^\/+|\/+$/g, "").split("/").filter(Boolean);
+  const qualityScore = getQualityScore(record);
+
   return {
     pathname,
     segments,
     ...record,
+    indexable: shouldIndexRoute(record),
+    qualityScore,
+    sitemapGroup: getSitemapGroup(record),
   };
 }
 
+function getSitemapGroup(record: RouteSeed): SitemapGroup {
+  if (record.kind === "local" || record.kind === "exam-city" || record.kind === "exam-city-grade") {
+    return "locations";
+  }
+
+  if (record.kind === "comparison" || record.kind === "parent-intent") {
+    return "olympiads";
+  }
+
+  return "programs";
+}
+
+function getQualityScore(record: RouteSeed) {
+  let score = 55;
+
+  if (record.kind === "comparison" || record.kind === "parent-intent") score += 28;
+  if (record.kind === "online" || record.kind === "international") score += 24;
+  if (record.kind === "exam-grade") score += 18;
+  if (record.kind === "exam-city") score += 14;
+  if (record.kind === "local") score += 12;
+  if (record.kind === "exam-city-grade") score += 10;
+
+  if (record.locationKey) {
+    score += seoLocations[record.locationKey].seoTier === "core" ? 12 : 6;
+  }
+
+  if (record.grade && [2, 3, 4, 5, 6].includes(record.grade)) {
+    score += 6;
+  }
+
+  return score;
+}
+
+function shouldIndexRoute(record: RouteSeed) {
+  if (record.kind === "comparison" || record.kind === "parent-intent" || record.kind === "online") {
+    return true;
+  }
+
+  if (record.kind === "international") {
+    return ["ae", "qa", "np", "lk", "be", "sg", "us", "uk"].includes(record.regionKey ?? "");
+  }
+
+  if (record.kind === "exam-city" && record.locationKey) {
+    if (record.examKey === "olympiad-maths") {
+      return ["mumbai", "ahmedabad", "delhi", "bengaluru", "pune"].includes(record.locationKey);
+    }
+
+    return highIntentExamCityLocations.includes(record.locationKey);
+  }
+
+  if (record.kind === "exam-grade" && record.examKey && record.grade) {
+    return (examGradeTargets[record.examKey] ?? []).includes(record.grade);
+  }
+
+  if (record.kind === "exam-city-grade" && record.examKey && record.locationKey && record.grade) {
+    return (
+      highIntentCityGradeLocations.includes(record.locationKey) &&
+      (cityGradeTargets[record.examKey] ?? []).includes(record.grade)
+    );
+  }
+
+  if (record.kind === "local" && record.locationKey) {
+    if (record.localTopic === "mental-maths-classes") {
+      return ["mumbai", "pune", "ahmedabad", "delhi"].includes(record.locationKey);
+    }
+
+    if (record.localTopic === "olympiad-coaching") {
+      return ["mumbai", "pune", "ahmedabad", "delhi", "bengaluru", "hyderabad"].includes(record.locationKey);
+    }
+
+    return [...highIntentExamCityLocations, ...supportingLocalLocations].includes(record.locationKey);
+  }
+
+  return false;
+}
+
 function createExamCityRoutes() {
-  const targetedExams: ExamKey[] = ["sof-imo", "sasmo", "ipm", "mental-maths", "olympiad-maths"];
+  const targetedExams: ExamKey[] = ["sof-imo", "sasmo", "mental-maths", "olympiad-maths"];
+
   return targetedExams.flatMap((examKey) => {
     const exam = seoExams[examKey];
     return cityLocations.map((locationKey) =>
-      createRecord(`/${exam.slug}-${exam.citySuffix}-${seoLocations[locationKey].slug}`, {
+      createRawRecord(`/${exam.slug}-${exam.citySuffix}-${seoLocations[locationKey].slug}`, {
         kind: "exam-city",
         examKey,
         locationKey,
@@ -63,54 +174,51 @@ function createExamCityRoutes() {
 
 function createExamGradeRoutes() {
   const targetedExams: ExamKey[] = ["sof-imo", "sasmo", "mental-maths", "ipm"];
+
   return targetedExams.flatMap((examKey) => {
-    const exam = seoExams[examKey];
-    return grades
-      .filter((grade) => grade.grade >= exam.minGrade && grade.grade <= exam.maxGrade)
-      .map((grade) =>
-        createRecord(`/${exam.slug}-class-${grade.grade}`, {
-          kind: "exam-grade",
-          examKey,
-          grade: grade.grade,
-        }),
-      );
+    const grades = examGradeTargets[examKey] ?? [];
+    return grades.map((grade) =>
+      createRawRecord(`/${seoExams[examKey].slug}-class-${grade}`, {
+        kind: "exam-grade",
+        examKey,
+        grade,
+      }),
+    );
   });
 }
 
 function createExamCityGradeRoutes() {
   const targetedExams: ExamKey[] = ["sof-imo", "sasmo", "mental-maths"];
-  return targetedExams.flatMap((examKey) => {
-    const exam = seoExams[examKey];
-    return topCityGradeLocations.flatMap((locationKey) =>
-      grades
-        .filter((grade) => grade.grade >= exam.minGrade && grade.grade <= exam.maxGrade)
-        .map((grade) =>
-          createRecord(`/${exam.slug}-class-${grade.grade}-${seoLocations[locationKey].slug}`, {
-            kind: "exam-city-grade",
-            examKey,
-            grade: grade.grade,
-            locationKey,
-          }),
-        ),
-    );
-  });
+
+  return targetedExams.flatMap((examKey) =>
+    highIntentCityGradeLocations.flatMap((locationKey) =>
+      (cityGradeTargets[examKey] ?? []).map((grade) =>
+        createRawRecord(`/${seoExams[examKey].slug}-class-${grade}-${seoLocations[locationKey].slug}`, {
+          kind: "exam-city-grade",
+          examKey,
+          grade,
+          locationKey,
+        }),
+      ),
+    ),
+  );
 }
 
 function createLocalRoutes() {
   return cityLocations.flatMap((locationKey) => {
     const slug = seoLocations[locationKey].slug;
     return [
-      createRecord(`/maths-classes-in-${slug}`, {
+      createRawRecord(`/maths-classes-in-${slug}`, {
         kind: "local",
         locationKey,
         localTopic: "maths-classes",
       }),
-      createRecord(`/olympiad-coaching-in-${slug}`, {
+      createRawRecord(`/olympiad-coaching-in-${slug}`, {
         kind: "local",
         locationKey,
         localTopic: "olympiad-coaching",
       }),
-      createRecord(`/mental-maths-classes-in-${slug}`, {
+      createRawRecord(`/mental-maths-classes-in-${slug}`, {
         kind: "local",
         locationKey,
         localTopic: "mental-maths-classes",
@@ -128,7 +236,7 @@ function createOnlineRoutes() {
   ];
 
   return onlineRoutes.map((item) =>
-    createRecord(item.pathname, {
+    createRawRecord(item.pathname, {
       kind: "online",
       examKey: item.examKey,
     }),
@@ -137,7 +245,7 @@ function createOnlineRoutes() {
 
 function createParentIntentRoutes() {
   return parentIntentPages.map((page) =>
-    createRecord(`/${page.slug}`, {
+    createRawRecord(`/${page.slug}`, {
       kind: "parent-intent",
       parentIntentSlug: page.slug,
       examKey: typeof page.focus === "string" && page.focus in seoExams ? (page.focus as ExamKey) : undefined,
@@ -147,7 +255,7 @@ function createParentIntentRoutes() {
 
 function createComparisonRoutes() {
   return comparisonPages.map((page) =>
-    createRecord(`/${page.slug}`, {
+    createRawRecord(`/${page.slug}`, {
       kind: "comparison",
       comparisonSlug: page.slug,
       examKey: page.leftExam,
@@ -157,16 +265,18 @@ function createComparisonRoutes() {
 
 function createInternationalRoutes() {
   const routes: Array<{ regionKey: RegionKey; slug: string; examKey: ExamKey }> = [
+    { regionKey: "ae", slug: "online-maths-enrichment", examKey: "online-maths-enrichment" },
+    { regionKey: "qa", slug: "olympiad-maths-program", examKey: "olympiad-maths" },
+    { regionKey: "np", slug: "mental-maths-program", examKey: "mental-maths" },
+    { regionKey: "lk", slug: "maths-enrichment-program", examKey: "online-maths-enrichment" },
+    { regionKey: "be", slug: "brussels-math-enrichment", examKey: "online-maths-enrichment" },
     { regionKey: "sg", slug: "sasmo-training", examKey: "sasmo" },
-    { regionKey: "ae", slug: "mental-maths-online", examKey: "mental-maths" },
     { regionKey: "us", slug: "online-math-enrichment", examKey: "online-maths-enrichment" },
     { regionKey: "uk", slug: "olympiad-maths-classes", examKey: "olympiad-maths" },
-    { regionKey: "ca", slug: "gifted-math-program", examKey: "online-maths-enrichment" },
-    { regionKey: "au", slug: "competitive-maths-training", examKey: "olympiad-maths" },
   ];
 
   return routes.map((route) =>
-    createRecord(`/${route.regionKey}/${route.slug}`, {
+    createRawRecord(`/${route.regionKey}/${route.slug}`, {
       kind: "international",
       regionKey: route.regionKey,
       examKey: route.examKey,
@@ -174,7 +284,7 @@ function createInternationalRoutes() {
   );
 }
 
-export const programmaticSeoRoutes: SeoPageRecord[] = [
+export const candidateProgrammaticSeoRoutes: SeoPageRecord[] = [
   ...createExamCityRoutes(),
   ...createExamGradeRoutes(),
   ...createExamCityGradeRoutes(),
@@ -185,6 +295,8 @@ export const programmaticSeoRoutes: SeoPageRecord[] = [
   ...createInternationalRoutes(),
 ];
 
+export const programmaticSeoRoutes = candidateProgrammaticSeoRoutes.filter((route) => route.indexable);
+
 const routeMap = new Map(programmaticSeoRoutes.map((route) => [route.pathname, route]));
 
 export function getSeoPageRecordBySegments(segments: string[] = []) {
@@ -192,35 +304,14 @@ export function getSeoPageRecordBySegments(segments: string[] = []) {
   return routeMap.get(pathname) ?? null;
 }
 
-export function getRelatedRoutes(record: SeoPageRecord) {
-  if (record.examKey) {
-    const exam = seoExams[record.examKey];
-    const relatedExamRoutes = exam.relatedExams.slice(0, 3).map((relatedExamKey) => ({
-      href: seoExams[relatedExamKey].primaryPage,
-      label: `${seoExams[relatedExamKey].name} programme`,
-    }));
-
-    const relatedResources = [
-      {
-        href: "/resources",
-        label: "Maths enrichment guides",
-      },
-      ...relatedExamRoutes,
-    ];
-
-    return relatedResources;
-  }
-
-  return [{ href: "/resources", label: "Parent resources" }];
-}
-
-export function getLocationRoutes(locationKey: LocationKey) {
-  return seoLocations[locationKey].nearby.map((nearbyKey) => ({
-    href: `/maths-classes-in-${seoLocations[nearbyKey].slug}`,
-    label: `Maths classes in ${seoLocations[nearbyKey].name}`,
-  }));
-}
-
 export function getRegionForRecord(record: SeoPageRecord) {
   return record.regionKey ? seoRegions[record.regionKey] : seoRegions.in;
+}
+
+export function getProgrammaticRoutesByGroup(group: SitemapGroup) {
+  return programmaticSeoRoutes.filter((route) => route.sitemapGroup === group);
+}
+
+export function getRouteByPath(pathname: string) {
+  return routeMap.get(pathname) ?? null;
 }

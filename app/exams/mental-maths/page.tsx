@@ -6,12 +6,23 @@ import { examsData } from "@/data/exams";
 import CTASection from "@/components/exams/CTASection";
 import FAQSection from "@/components/exams/FAQSection";
 import UrgencyBadge from "@/components/UrgencyBadge";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildBasicPageMetadata({
+  path: "/exams/mental-maths",
   title: "Mental Maths Classes for Kids | Speed Math Training in Mumbai",
-  description: "Expert mental maths classes for kids in Mumbai and online. Speed math training with Vedic math, abacus methods. Book free trial today.",
-  keywords: "mental maths classes for kids, speed maths training, brain development maths, mental math training, vedic maths, abacus maths, speed calculation, mental math coach",
-};
+  description:
+    "Expert mental maths classes for kids in Mumbai and online. Speed maths training built around number sense, confidence, and calculation fluency.",
+  keywords: [
+    "mental maths classes for kids",
+    "speed maths training",
+    "brain development maths",
+    "mental math training",
+    "vedic maths",
+    "abacus maths",
+    "speed calculation",
+  ],
+});
 
 const exam = examsData[3];
 

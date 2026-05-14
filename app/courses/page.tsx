@@ -1,13 +1,14 @@
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import CoursesSection from "@/components/CoursesSection";
 import LearningModes from "@/components/LearningModes";
 import FinalCTA from "@/components/FinalCTA";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = {
+export const metadata = buildBasicPageMetadata({
+  path: "/courses",
   title: "Courses | Maths with Shraddha",
-  description: "Explore our math coaching batches for Grades 1-10 and Olympiad preparation.",
-};
+  description: "Explore our maths coaching batches for Grades 1-10, olympiad preparation, and online enrichment.",
+});
 
 export default function CoursesPage() {
   return (

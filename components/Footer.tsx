@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { getFooterLinkSections } from "@/lib/seo/internal-links";
 
 export default function Footer() {
+  const footerSections = getFooterLinkSections();
+
   return (
     <footer className="bg-background pt-16 pb-8 border-t border-gray-200 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="inline-block mb-6">
               <Image
@@ -33,15 +36,20 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <h4 className="text-lg font-heading font-bold text-primary mb-6">Quick Links</h4>
-            <ul className="space-y-3">
-              <li><Link href="/about" className="text-gray-600 hover:text-accent transition-colors">Our Story</Link></li>
-              <li><Link href="/courses" className="text-gray-600 hover:text-accent transition-colors">Our Programs</Link></li>
-              <li><Link href="/testimonials" className="text-gray-600 hover:text-accent transition-colors">Testimonials</Link></li>
-              <li><Link href="/enquire" className="text-gray-600 hover:text-accent transition-colors">Book Free Trial</Link></li>
-            </ul>
-          </div>
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h4 className="text-lg font-heading font-bold text-primary mb-6">{section.title}</h4>
+              <ul className="space-y-3">
+                {section.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-gray-600 hover:text-accent transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           <div>
             <h4 className="text-lg font-heading font-bold text-primary mb-6">Contact Us</h4>

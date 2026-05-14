@@ -3,12 +3,14 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import FinalCTA from "@/components/FinalCTA";
 import { resourceArticles } from "@/data/resources";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildBasicPageMetadata({
+  path: "/resources",
   title: "Maths Resources for Parents",
   description:
     "Educational guides on olympiad maths, mental maths, singapore maths, and enrichment decisions for ambitious families.",
-};
+});
 
 export const revalidate = 86400;
 

@@ -1,14 +1,15 @@
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import ResultsSection from "@/components/ResultsSection";
 import ShortsCarousel from "@/components/ShortsCarousel";
 import FinalCTA from "@/components/FinalCTA";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = {
+export const metadata = buildBasicPageMetadata({
+  path: "/testimonials",
   title: "Testimonials & Results | Maths with Shraddha",
-  description: "Read what parents and students say about our math coaching and view our success stories.",
-};
+  description: "Read what parents and students say about our maths coaching and view our success stories.",
+});
 
 export default function TestimonialsPage() {
   return (

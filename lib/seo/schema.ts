@@ -1,7 +1,7 @@
 import { seoExams, seoLocations } from "@/data/seo/programmatic";
 import type { BreadcrumbItem, PageFaq } from "@/lib/seo/content";
 import type { SeoPageRecord } from "@/lib/seo/routes";
-import { organization, SITE_NAME, SITE_URL } from "@/lib/seo/site";
+import { instructorProfile, organization, SITE_NAME, SITE_URL } from "@/lib/seo/site";
 
 export function buildOrganizationSchema() {
   return {
@@ -17,6 +17,33 @@ export function buildOrganizationSchema() {
       addressLocality: organization.address.locality,
       addressRegion: organization.address.region,
       addressCountry: organization.address.country,
+    },
+    founder: {
+      "@type": "Person",
+      name: instructorProfile.name,
+      jobTitle: instructorProfile.jobTitle,
+    },
+    knowsAbout: [
+      "Olympiad maths coaching",
+      "Mental maths training",
+      "Online maths enrichment",
+      "SASMO preparation",
+      "SOF IMO preparation",
+    ],
+  };
+}
+
+export function buildInstructorSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: instructorProfile.name,
+    description: instructorProfile.description,
+    jobTitle: instructorProfile.jobTitle,
+    worksFor: {
+      "@type": "EducationalOrganization",
+      name: SITE_NAME,
+      url: SITE_URL,
     },
   };
 }
@@ -80,26 +107,28 @@ export function buildCourseSchema(record: SeoPageRecord) {
       name: SITE_NAME,
       url: SITE_URL,
     },
+    inLanguage: "en",
+    teaches: exam.syllabusThemes,
     educationalCredentialAwarded: exam.family === "exam" ? exam.name : "Advanced maths enrichment",
   };
 }
 
-export function buildLocalBusinessSchema(record: SeoPageRecord) {
-  if (!record.locationKey) return null;
-  const location = seoLocations[record.locationKey];
+export function buildTutoringServiceSchema(record: SeoPageRecord) {
+  const location = record.locationKey ? seoLocations[record.locationKey] : undefined;
+  const exam = record.examKey ? seoExams[record.examKey] : undefined;
 
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: `${SITE_NAME} - ${location.name}`,
-    description: `Premium maths, olympiad, and mental maths coaching for families in ${location.name}.`,
-    areaServed: location.name,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: location.name,
-      addressRegion: location.state,
-      addressCountry: "IN",
+    "@type": "Service",
+    name: exam ? `${exam.name} Coaching` : `${SITE_NAME} Maths Coaching`,
+    description: exam?.overview ?? "Premium maths, olympiad, and mental maths coaching.",
+    provider: {
+      "@type": "EducationalOrganization",
+      name: SITE_NAME,
+      url: SITE_URL,
     },
+    areaServed: location ? [location.name, location.state] : organization.areaServed,
+    serviceType: "Maths tutoring and olympiad coaching",
     telephone: organization.telephone,
     url: `${SITE_URL}${record.pathname}`,
   };

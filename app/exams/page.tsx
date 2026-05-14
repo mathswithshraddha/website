@@ -5,16 +5,22 @@ import Link from "next/link";
 import { examsData, whyOlympiads, ourApproach, batchTimeline, statsData, examCards } from "@/data/exams";
 import CTASection from "@/components/exams/CTASection";
 import UrgencyBadge from "@/components/UrgencyBadge";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildBasicPageMetadata({
+  path: "/exams",
   title: "Maths Olympiad Coaching | Grades 2-9 Preparation in Mumbai & India",
-  description: "Expert maths olympiad coaching for SASMO, SOF, IPM & Mental Maths. Best olympiad classes for kids in Mumbai. Book free trial today.",
-  keywords: "maths olympiad coaching, maths olympiad classes for kids, olympiad maths preparation, maths tuition, online maths classes, best maths teacher, maths classes in Mumbai, maths olympiad coaching in India",
-  openGraph: {
-    title: "Maths Olympiad Coaching | Grades 2-9 Preparation",
-    description: "Expert maths olympiad coaching for SASMO, SOF, IPM & Mental Maths. Best olympiad classes for kids in Mumbai.",
-  }
-};
+  description:
+    "Expert maths olympiad coaching for SASMO, SOF, IPM, and mental maths. Structured programmes for Mumbai, India, and online families.",
+  keywords: [
+    "maths olympiad coaching",
+    "maths olympiad classes for kids",
+    "olympiad maths preparation",
+    "online maths classes",
+    "maths classes in Mumbai",
+    "maths olympiad coaching in India",
+  ],
+});
 
 const approachIcons = [Brain, Target, GraduationCap, Calendar];
 

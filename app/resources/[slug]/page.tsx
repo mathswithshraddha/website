@@ -7,9 +7,10 @@ import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import JsonLd from "@/components/seo/JsonLd";
 import { resourceArticles } from "@/data/resources";
 import { seoExams } from "@/data/seo/programmatic";
+import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 import { buildBreadcrumbSchema, buildFaqSchema } from "@/lib/seo/schema";
-import { SITE_URL } from "@/lib/seo/site";
 
+export const dynamic = "force-static";
 export const dynamicParams = false;
 export const revalidate = 86400;
 
@@ -30,13 +31,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const article = getArticle(slug);
   if (!article) return {};
 
-  return {
+  return buildBasicPageMetadata({
+    path: `/resources/${article.slug}`,
     title: article.title,
     description: article.description,
-    alternates: {
-      canonical: `${SITE_URL}/resources/${article.slug}`,
-    },
-  };
+  });
 }
 
 export default async function ResourceArticlePage({ params }: PageProps) {
