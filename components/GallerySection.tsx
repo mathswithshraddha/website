@@ -1,5 +1,7 @@
 export default function GallerySection() {
   const images = [
+    "/image1.jpg",
+    "/image2.jpg",
     ...Array.from({ length: 10 }, (_, i) => {
       if (i < 2) return `/photo_${i + 1}_2026-05-08_22-05-44.jpg`;
       return `/photo_${i + 1}_2026-05-08_22-06-10.jpg`;

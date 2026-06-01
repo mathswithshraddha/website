@@ -5,6 +5,7 @@ import { Sun, Cloud, Smile, ArrowRight, Users, Clock, Lightbulb } from "lucide-r
 import Testimonials from "@/components/Testimonials";
 import SchoolsSection from "@/components/SchoolsSection";
 import ShortsCarousel from "@/components/ShortsCarousel";
+import AutoScrollGallery from "@/components/AutoScrollGallery";
 import { buildBasicPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = buildBasicPageMetadata({
@@ -236,6 +237,9 @@ export default function Home() {
 
       {/* Shorts Carousel */}
       <ShortsCarousel />
+
+      {/* Auto Scrolling Image Carousel */}
+      <AutoScrollGallery />
 
       {/* Testimonials */}
       <Testimonials />

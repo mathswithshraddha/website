@@ -12,7 +12,7 @@ export default function TeamsSection() {
       name: "Amit Panchal",
       role: "Mathematics Educator | Olympiad & Board Exam Mentor",
       image: "/team/amitsir.jpg",
-      description: "With 15+ years of teaching experience, Amit Panchal specializes in Competitive Mathematics, Olympiads, Mental Math, and Board Mathematics for ICSE, CBSE, and IGCSE students. Known for concept clarity, logical thinking, and personalized mentoring, he helps students build confidence, speed, and strong problem-solving skills. Qualification: B.Com, LLB, B.Ed, B.A., M.A.",
+      description: "With 20+ years of teaching experience, Amit Panchal specializes in Competitive Mathematics, Olympiads, Mental Math, and Board Mathematics for ICSE, CBSE, and IGCSE students. Known for concept clarity, logical thinking, and personalized mentoring, he helps students build confidence, speed, and strong problem-solving skills. Qualification: B.Com, LLB, B.Ed, B.A., M.A.",
     },
     {
       name: "Krupa Karan Chauhan",
