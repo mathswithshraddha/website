@@ -78,6 +78,7 @@ export function buildSitemapXml(entries: SitemapEntry[]) {
 
 export function buildSitemapIndexXml() {
   const sitemaps = [
+    `${SITE_URL}/sitemap-competitive-exam-classes-mumbai.xml`,
     `${SITE_URL}/sitemap-programs.xml`,
     `${SITE_URL}/sitemap-locations.xml`,
     `${SITE_URL}/sitemap-olympiads.xml`,
