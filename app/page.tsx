@@ -235,6 +235,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* My Students My Pride */}
+      <section className="py-12 md:py-16 px-4 flex flex-col items-center max-w-7xl mx-auto w-full">
+        <div className="bg-primary text-white px-6 sm:px-10 py-3 rounded-full text-xl md:text-3xl font-heading font-bold mb-8 shadow-lg text-center">
+          My Students My Pride
+        </div>
+        <div className="relative w-full max-w-lg mx-auto rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white group bg-white">
+          <Image
+            src="/jay-with-medals.jpg"
+            alt="Shraddha Mam with Jay"
+            width={600}
+            height={600}
+            className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pt-20 pb-6 px-4 text-center pointer-events-none">
+            <p className="text-white font-bold text-xl sm:text-2xl drop-shadow-xl transform group-hover:-translate-y-1 transition-transform duration-500">
+              Shraddha Mam with Jay
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Shorts Carousel */}
       <ShortsCarousel />
 

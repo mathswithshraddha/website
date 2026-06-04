@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Preloader from "@/components/Preloader";
 import JsonLd from "@/components/seo/JsonLd";
+import TrialPopup from "@/components/TrialPopup";
 import { buildSiteMetadata } from "@/lib/seo/metadata";
 import { buildInstructorSchema, buildOrganizationSchema } from "@/lib/seo/schema";
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={`${fredoka.className} ${fredoka.variable} font-sans min-h-screen flex flex-col bg-background text-primary`}>
         <JsonLd data={[buildOrganizationSchema(), buildInstructorSchema()]} />
         <Preloader />
+        <TrialPopup />
         {children}
         <Footer />
         <FloatingWhatsApp />
