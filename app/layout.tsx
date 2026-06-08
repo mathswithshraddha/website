@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`${fredoka.className} ${fredoka.variable} font-sans min-h-screen flex flex-col bg-background text-primary`}>
         <JsonLd data={[buildOrganizationSchema(), buildInstructorSchema()]} />
         <Preloader />
-        <TrialPopup />
+        {/* <TrialPopup /> */}
         {children}
         <Footer />
         <FloatingWhatsApp />
